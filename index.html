@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HackAdton Puebla 2026 — Competencia interuniversitaria de marketing. Equipos de 4–5 estudiantes resuelven un brief real en 48 horas. Final 27 ago + Next Puebla 2026 miér 26 ago · Teatro CCU BUAP." />
+  <meta property="og:title" content="HackAdton Puebla 2026 · Registro de equipos" />
+  <meta property="og:description" content="48 horas para resolver un reto real de marketing. Inscripción cierra el 7 de agosto. Final 27 ago + Next Puebla 2026 miér 26 ago · Teatro CCU BUAP." />
+  <meta property="og:image" content="https://hackadton.com.mx/uploads/2026/02/hackadton-meta-9cc3faf0-700.webp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hackadton.com.mx/hackadton-puebla" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>HackAdton Puebla 2026 · Evento, premios y registro de equipos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --bg:        #0c0c0e;
+      --bg2:       #141418;
+      --bg3:       #1c1c22;
+      --border:    rgba(255,255,255,.08);
+      --border2:   rgba(255,255,255,.14);
+      --text:      #f0f0f4;
+      --muted:     #8888a0;
+      --lime:      #a78bfa;
+      --lime-dim:  rgba(167,139,250,.12);
+      --purple:    #f472b6;
+      --purple-dim:rgba(244,114,182,.12);
+      --blue:      #60a5fa;
+      --blue-dim:  rgba(96,165,250,.12);
+      --pink:      #f472b6;
+      --pink-dim:  rgba(244,114,182,.12);
+      --teal:      #2dd4bf;
+      --teal-dim:  rgba(45,212,191,.12);
+      --orange:    #fbbf24;
+      --orange-dim:rgba(251,191,36,.12);
+      --green:     #4ade80;
+      --green-dim: rgba(74,222,128,.12);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-cond: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    /* ── RESET ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ── UTILS ───────────────────────────────────────────── */
+    .sr-only { position: absolute; left: -9999px; }
+    .eyebrow {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .divider { border: none; border-top: 1px solid var(--border); }
+    .section { padding: 56px 24px; max-width: 800px; margin: 0 auto; }
+    .section-title {
+      font-family: var(--font-cond);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 24px;
+      background: rgba(12,12,14,.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: var(--font-cond);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-brand img { height: 26px; width: auto; }
+    .nav-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--lime-dim);
+      color: var(--lime);
+      padding: 2px 8px;
+      border-radius: 20px;
+      border: 1px solid rgba(184,255,78,.25);
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .nav-links a { transition: color .15s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--lime);
+      color: #0c0c0e;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      transition: opacity .15s;
+    }
+    .nav-cta:hover { opacity: .85; }
+
+    /* ── URGENCY BAR ─────────────────────────────────────── */
+    .urgency-bar {
+      background: var(--lime-dim);
+      border-bottom: 1px solid rgba(184,255,78,.2);
+      padding: 10px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .urgency-bar strong { font-weight: 700; }
+    .urgency-dot {
+      width: 7px; height: 7px;
+      background: var(--lime);
+      border-radius: 50%;
+      animation: pulse 1.6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .4; transform: scale(.7); }
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      padding: 64px 24px 56px;
+      text-align: center;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(184,255,78,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(167,139,250,.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ── LOGO HERO ───────────────────────────────────────── */
+    .hero-logo {
+      display: block;
+      margin: 0 auto 20px;
+      height: 72 px;
+      width: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title {
+      font-family: var(--font-cond);
+      font-size: clamp(38px, 7vw, 62px);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: -.5px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title span { color: var(--lime); }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary {
+      background: var(--lime);
+      color: #0c0c0e;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 13px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border2);
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      display: inline-block;
+    }
+    .btn-ghost:hover { background: var(--bg2); border-color: var(--muted); }
+    .hero-deadline {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-deadline strong { color: var(--orange); }
+
+    /* ── CUPOS BADGE ─────────────────────────────────────── */
+    .cupos-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: var(--orange-dim);
+      color: var(--orange);
+      border: 1px solid rgba(251,191,36,.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cupos-badge i { font-size: 13px; }
+
+    /* ── COUNTDOWN ───────────────────────────────────────── */
+    .countdown-strip {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .cd-label { font-size: 12px; color: var(--muted); margin-right: 8px; }
+    .cd-unit { display: flex; flex-direction: column; align-items: center; min-width: 52px; }
+    .cd-num {
+      font-family: var(--font-cond);
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--lime);
+    }
+    .cd-sub {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .cd-sep {
+      font-family: var(--font-cond);
+      font-size: 24px;
+      color: var(--border2);
+      align-self: flex-start;
+      margin-top: 2px;
+    }
+    .cd-context { font-size: 12px; color: var(--muted); margin-left: 12px; }
+
+    /* ── STATS ───────────────────────────────────────────── */
+    .stats-section {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+    .stats-inner { max-width: 800px; margin: 0 auto; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .stat-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-cond);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--lime);
+      line-height: 1;
+    }
+    .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+    .stats-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      margin-top: 6px;
+    }
+
+    /* ── TIMELINE ────────────────────────────────────────── */
+    .tl-grid { display: flex; flex-direction: column; }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 100px 20px 1fr;
+      gap: 0 14px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tl-row:last-child { border-bottom: none; }
+    .tl-date {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.45;
+      padding-top: 4px;
+      font-family: var(--font-cond);
+      letter-spacing: .3px;
+    }
+    .tl-spine { display: flex; flex-direction: column; align-items: center; }
+    .tl-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+      box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px currentColor;
+    }
+    .tl-line { width: 1px; flex: 1; background: var(--border); margin-top: 6px; }
+    .tl-tag {
+      display: inline-block;
+      font-family: var(--font-cond);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 7px;
+    }
+    .tl-title {
+      font-family: var(--font-cond);
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      line-height: 1.25;
+    }
+    .tl-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .tl-location {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* color variants */
+    .c-violet { color: var(--purple); }
+    .c-blue   { color: var(--blue); }
+    .c-pink   { color: var(--pink); }
+    .c-teal   { color: var(--teal); }
+    .c-orange { color: var(--orange); }
+    .c-green  { color: var(--lime); }
+    .c-lime   { color: var(--lime); }
+    .c-purple { color: var(--purple); }
+
+    .tag-violet { background: var(--purple-dim); color: var(--purple); }
+    .tag-blue   { background: var(--blue-dim);   color: var(--blue); }
+    .tag-pink   { background: var(--pink-dim);   color: var(--pink); }
+    .tag-teal   { background: var(--teal-dim);   color: var(--teal); }
+    .tag-orange { background: var(--orange-dim); color: var(--orange); }
+    .tag-green  { background: var(--green-dim);  color: var(--green); }
+
+    .dot-violet { background: var(--purple); color: var(--purple); }
+    .dot-blue   { background: var(--blue);   color: var(--blue); }
+    .dot-pink   { background: var(--pink);   color: var(--pink); }
+    .dot-teal   { background: var(--teal);   color: var(--teal); }
+    .dot-orange { background: var(--orange); color: var(--orange); }
+    .dot-green  { background: var(--lime);   color: var(--lime); }
+
+    /* ── DELIVERABLES ────────────────────────────────────── */
+    .deliv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .deliv-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+    }
+    .deliv-icon { font-size: 18px; margin-bottom: 6px; }
+    .deliv-label { font-size: 13px; font-weight: 600; margin-bottom: 2px; font-family: var(--font-cond); }
+    .deliv-sub { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+    /* ── SUBMIT BOX ──────────────────────────────────────── */
+    .submit-box {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 16px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .submit-box strong {
+      color: var(--teal);
+      display: block;
+      margin-bottom: 6px;
+      font-family: var(--font-cond);
+      font-size: 14px;
+    }
+
+    /* ── PRIZES ──────────────────────────────────────────── */
+    .prizes-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .prize-main {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .prize-main::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--lime), var(--purple));
+    }
+    .prize-badge-gp {
+      display: inline-block;
+      font-family: var(--font-cond);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--lime-dim);
+      color: var(--lime);
+      border: 1px solid rgba(184,255,78,.3);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+    .prize-title {
+      font-family: var(--font-cond);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .prize-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .prize-list li {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+    .prize-list li::before {
+      content: '';
+      display: block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--lime);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .cats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .cat-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      transition: border-color .15s;
+    }
+    .cat-item:hover { border-color: var(--border2); }
+    .cat-icon { font-size: 18px; margin-bottom: 6px; }
+    .cat-label { font-size: 13px; font-weight: 600; font-family: var(--font-cond); line-height: 1.3; }
+    .cert-note {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── REGISTER SECTION ────────────────────────────────── */
+    .reg-section {
+      background: var(--bg);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .reg-inner { max-width: 520px; margin: 0 auto; }
+    .reg-open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--lime-dim);
+      color: var(--lime);
+      border: 1px solid rgba(184,255,78,.25);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      font-family: var(--font-cond);
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    .reg-open-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    .reg-title { font-family: var(--font-cond); font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+    .reg-sub { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.65; }
+    .reg-checklist {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 0 auto 28px;
+      text-align: left;
+    }
+    .reg-checklist-title {
+      font-family: var(--font-cond);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .reg-checklist ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .reg-checklist li {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .reg-checklist li i { font-size: 15px; color: var(--lime); }
+    .cupos-warning {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange-dim);
+      border: 1px solid rgba(251,191,36,.25);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--orange);
+      text-align: left;
+    }
+    .cupos-warning i { font-size: 18px; flex-shrink: 0; }
+    .reg-deadline { font-size: 12px; color: var(--muted); margin-top: 12px; }
+    .reg-deadline strong { color: var(--orange); }
+
+    /* ── PROFESSIONALS ───────────────────────────────────── */
+    .pro-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .pro-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+    .pro-icon { font-size: 22px; margin-bottom: 10px; color: var(--purple); }
+    .pro-title { font-family: var(--font-cond); font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+    .pro-desc { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px; }
+    .pro-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--purple);
+      font-family: var(--font-cond);
+      letter-spacing: .3px;
+      transition: opacity .15s;
+    }
+    .pro-link:hover { opacity: .75; }
+
+    /* ── FAQ ─────────────────────────────────────────────── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+    }
+    .faq-q i { font-size: 16px; transition: transform .2s; color: var(--muted); flex-shrink: 0; }
+    .faq-a { font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 12px; display: none; }
+    .faq-a.open { display: block; }
+
+    /* ── SPONSORS ────────────────────────────────────────── */
+    .sponsors-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .sponsors-inner { max-width: 800px; margin: 0 auto; }
+    .sponsors-eyebrow {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .sponsors-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .sponsor-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: .65;
+      transition: opacity .2s;
+      filter: grayscale(1) brightness(1.8);
+    }
+    .sponsor-item:hover {
+      opacity: 1;
+      filter: grayscale(0) brightness(1);
+    }
+    .sponsor-item img {
+      height: 36px;
+      width: auto;
+      max-width: 120px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      padding: 24px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .footer a { transition: color .15s; }
+    .footer a:hover { color: var(--text); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .tl-row { grid-template-columns: 82px 16px 1fr; }
+      .hero-title { font-size: 34px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .footer { flex-direction: column; text-align: center; }
+      .cd-num { font-size: 24px; }
+      .hero-logo { height: 56px; }
+      .sponsors-grid { gap: 28px; }
+      .sponsor-item img { height: 28px; }
+    }
+
+    /* ── INFO BANNER ─────────────────────────────────────── */
+    .info-banner {
+      background: var(--lime-dim);
+      border-left: 3px solid var(--lime);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--lime);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    /* ── NEXT PUEBLA SECTION ─────────────────────────────── */
+    .next-section {
+      background: linear-gradient(135deg, rgba(244,114,182,.06) 0%, rgba(96,165,250,.04) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px;
+    }
+    .next-inner { max-width: 800px; margin: 0 auto; }
+    .next-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-cond);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: var(--pink-dim);
+      color: var(--pink);
+      border: 1px solid rgba(244,114,182,.3);
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .next-title {
+      font-family: var(--font-cond);
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .next-title span { color: var(--pink); }
+    .next-sub {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+      max-width: 620px;
+    }
+    .next-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .next-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      color: var(--muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+    }
+    .next-meta-item i { color: var(--pink); font-size: 15px; }
+    .next-meta-item strong { color: var(--text); }
+    .next-audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .next-audience-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      transition: border-color .15s;
+    }
+    .next-audience-card:hover { border-color: rgba(244,114,182,.4); }
+    .next-audience-icon { font-size: 22px; margin-bottom: 8px; color: var(--pink); }
+    .next-audience-label { font-family: var(--font-cond); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .next-audience-sub { font-size: 11px; color: var(--muted); line-height: 1.4; }
+    .next-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .next-topic-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 14px 16px;
+    }
+    .next-topic-num {
+      font-family: var(--font-cond);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--pink);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .next-topic-label {
+      font-family: var(--font-cond);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .next-reg-note {
+      background: var(--pink-dim);
+      border: 1px solid rgba(244,114,182,.25);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 13px;
+      color: var(--pink);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .next-reg-note i { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .btn-pink {
+      background: var(--pink);
+      color: #0c0c0e;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+      display: inline-block;
+    }
+    .btn-pink:hover { opacity: .88; transform: translateY(-1px); }
+
+    /* tag-pink for timeline */
+    .tag-pink-next { background: var(--pink-dim); color: var(--pink); }
+    .dot-pink-next { background: var(--pink); color: var(--pink); }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  URGENCY BAR                                         ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<div class="urgency-bar" role="status" aria-live="polite">
+  <div class="urgency-dot" aria-hidden="true"></div>
+  <strong>Convocatoria abierta</strong>
+  <span>·</span>
+  <span>Cupos limitados · Inscripción cierra el <strong>7 de agosto</strong> · Kickoff 13 ago · Final 27 ago · Teatro CCU BUAP</span>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  NAV                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<nav class="nav" role="navigation" aria-label="Navegación principal">
+  <div class="nav-brand">
+    <img src="logo-pu26.png" alt="HackAdton Puebla 2026" onerror="this.style.display='none'" />
+    HackAdton <span style="font-weight:400;color:var(--muted);margin-left:4px">Puebla</span>
+    <span class="nav-badge">2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="#timeline">Timeline</a>
+
+    <a href="#premios">Premios</a>
+    <a href="#profesionales">Profesionales</a>
+    <a href="#registro">Registro</a>
+    <a href="#next-puebla" style="color:var(--pink)">Next Puebla</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="nav-cta" href="https://hackadton.com.mx/#registro-puebla" target="_blank" rel="noopener">
+    Inscribir equipo ↗
+  </a>
+</nav>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  HERO                                                ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<header class="hero" id="top">
+
+  <!-- 1 · LOGOTIPO DEL EVENTO -->
+  <img
+    src="logo-pu26.png"
+    alt="HackAdton Puebla 2026"
+    class="hero-logo"
+    onerror="this.style.display='none'"
+  />
+
+  <!-- 2 · EYEBROW -->
+  <p class="hero-eyebrow">Powered by young talent</p>
+
+  <h1 class="hero-title">
+    48 horas para resolver<br>
+    <span>un reto real de mkt</span>
+  </h1>
+  <p class="hero-sub">
+    HackAdton es la competencia interuniversitaria de Marketing Digital donde equipos de 4–5 estudiantes
+    y una tutora o tutor combinan creatividad, estrategia y tecnología
+    frente a un panel de expertos de la industria.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://hackadton.com.mx/#registro-puebla" target="_blank" rel="noopener">
+      Inscribir equipo ↗
+    </a>
+    <a class="btn-ghost" href="#timeline">Ver calendario</a>
+  </div>
+  <p class="hero-deadline">
+    Inscripción cierra el <strong>7 de agosto</strong>
+  </p>
+  <!-- 3 · CUPOS LIMITADOS -->
+  <div class="cupos-badge">
+    <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+    Cupos limitados — asegura el lugar de tu equipo
+  </div>
+</header>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  COUNTDOWN                                           ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<div class="countdown-strip" role="timer" aria-label="Cuenta regresiva al kickoff">
+  <span class="cd-label">Kickoff en</span>
+  <div class="cd-unit">
+    <span class="cd-num" id="cd-days">--</span>
+    <span class="cd-sub">días</span>
+  </div>
+  <span class="cd-sep" aria-hidden="true">:</span>
+  <div class="cd-unit">
+    <span class="cd-num" id="cd-hrs">--</span>
+    <span class="cd-sub">horas</span>
+  </div>
+  <span class="cd-sep" aria-hidden="true">:</span>
+  <div class="cd-unit">
+    <span class="cd-num" id="cd-min">--</span>
+    <span class="cd-sub">min</span>
+  </div>
+  <span class="cd-sep" aria-hidden="true">:</span>
+  <div class="cd-unit">
+    <span class="cd-num" id="cd-sec">--</span>
+    <span class="cd-sub">seg</span>
+  </div>
+  <span class="cd-context">· Jue 13 ago · Briefing + Charlas + Mentorías · En línea</span>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  STATS / IMPACTO                                     ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="stats-section" aria-label="Números del evento">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">13</div>
+        <div class="stat-label">universidades</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">48</div>
+        <div class="stat-label">equipos</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">239</div>
+        <div class="stat-label">participantes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">29</div>
+        <div class="stat-label">tutoras y tutores</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">14</div>
+        <div class="stat-label">speakers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">26</div>
+        <div class="stat-label">jueces</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">37</div>
+        <div class="stat-label">becados Bootcamp Digital Essentials Adcademy</div>
+      </div>
+    </div>
+    <p class="stats-note">Hasta ahora</p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  TIMELINE                                            ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="section" id="timeline" aria-labelledby="tl-heading">
+  <p class="eyebrow">Calendario</p>
+  <h2 class="section-title" id="tl-heading">Del brief al pitch en 14 días</h2>
+  <p class="section-sub">
+    Siete etapas con fechas exactas para que tu equipo pueda planear desde hoy.
+    El brief se entrega el <strong style="color:var(--text)">13 de agosto</strong>; la final presencial es el <strong style="color:var(--text)">27 de agosto en el Teatro CCU BUAP</strong>.
+  </p>
+
+  <div class="info-banner">
+    <strong>Convocatoria abierta · Cupos limitados.</strong>
+    Inscripción de equipos hasta el <strong>7 de agosto</strong>.
+    <br>
+    Registra a tu equipo de 4–5 estudiantes de mercadotecnia, comunicación, diseño y/o cualquier carrera afín, inscritos en la misma universidad e incluye a una tutora o tutor.
+  </div>
+
+  <div class="tl-grid" role="list">
+
+    <!-- 1. Arranque -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">Jue<br>13 ago</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-violet" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-violet">Arranque</span>
+        <div class="tl-title">Charlas con Expertos &amp; Entrega de Brief</div>
+        <div class="tl-desc">
+          Inauguración · Talks de industria · Briefing oficial · Mentoría de arranque.
+          A partir de aquí, el reloj de 48 horas comienza.
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-world" aria-hidden="true"></i> En línea
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Desarrollo -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">13–15<br>ago</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-blue" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-blue">Desarrollo</span>
+        <div class="tl-title">48 horas para desarrollar el proyecto</div>
+        <div class="tl-desc">
+          Los equipos trabajan desde su centro de operaciones. La propuesta integra 5 componentes:
+        </div>
+        <div class="deliv-grid">
+          <div class="deliv-card">
+            <div class="deliv-icon c-lime"><i class="ti ti-bulb" aria-hidden="true"></i></div>
+            <div class="deliv-label">Concepto Creativo</div>
+            <div class="deliv-sub">e Idea</div>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-icon c-blue"><i class="ti ti-speakerphone" aria-hidden="true"></i></div>
+            <div class="deliv-label">Estrategia</div>
+            <div class="deliv-sub">de Comunicación</div>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-icon c-orange"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+            <div class="deliv-label">Planeación</div>
+            <div class="deliv-sub">de Medios</div>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-icon c-pink"><i class="ti ti-palette" aria-hidden="true"></i></div>
+            <div class="deliv-label">Art &amp; Craft</div>
+            <div class="deliv-sub">Ejecución visual</div>
+          </div>
+          <div class="deliv-card">
+            <div class="deliv-icon c-teal"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+            <div class="deliv-label">Plataforma Tecnológica</div>
+            <div class="deliv-sub">Draft o Mock up</div>
+          </div>
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-map-pin" aria-hidden="true"></i>
+          Centro de operaciones de cada equipo
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Entrega -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">Sáb 15 ago<br>13:59 h</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-pink" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-pink">Entrega</span>
+        <div class="tl-title">Carga de entregables en plataforma</div>
+        <div class="tl-desc">Límite: <strong style="color:var(--text)">1:59 pm.</strong></div>
+        <div class="submit-box">
+          <strong><i class="ti ti-checklist" aria-hidden="true"></i> Qué deben subir</strong>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:5px">
+            <li>📄 Desarrollo en extenso — 10 págs. + anexos (obligatorios: presupuesto + bitácora de uso de IA)</li>
+            <li>📊 Deck de 10 diapositivas</li>
+            <li>🎥 Video Pitch de máximo 2 minutos</li>
+          </ul>
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-device-desktop" aria-hidden="true"></i>
+          En línea · hackadton.com.mx
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Evaluación -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">15–23<br>ago</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-teal" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-teal">Evaluación</span>
+        <div class="tl-title">Revisión del panel de jueces</div>
+        <div class="tl-desc">
+          El panel de expertos y la marca evalúan los 3 entregables: desarrollo en extenso,
+          deck de 10 diapositivas y video pitch de 2 minutos.
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-device-desktop" aria-hidden="true"></i>
+          Proceso interno · En línea
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Finalistas -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">Dom<br>23 ago</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-orange" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-orange">Resultados</span>
+        <div class="tl-title">Anuncio de finalistas</div>
+        <div class="tl-desc">
+          Publicación de equipos que presentarán su pitch en la final presencial.
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-world" aria-hidden="true"></i>
+          hackadton.com.mx y redes sociales
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Next Puebla 2026 -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">Miér<br>26 ago</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-pink-next" aria-hidden="true"></div>
+        <div class="tl-line" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-pink-next">Páneles de Adtech &amp; Networking</span>
+        <div class="tl-title">Next Puebla 2026</div>
+        <div class="tl-desc">
+          Tarde de páneles con expertos de la industria y networking para potenciar a la comunidad marketera en 3 tendencias Adtech.
+          Dirigido a marcas, agencias y comunidad estudiantil en general.
+        </div>
+        <div class="tl-location" style="margin-bottom:8px">
+          <i class="ti ti-map-pin" aria-hidden="true"></i>
+          <strong style="color:var(--text)">Teatro CCU BUAP · Puebla</strong>
+        </div>
+        <a href="#next-puebla" style="font-size:12px;font-weight:600;font-family:var(--font-cond);color:var(--pink);letter-spacing:.3px;transition:opacity .15s">
+          Ver más sobre Next Puebla →
+        </a>
+      </div>
+    </div>
+
+    <!-- 7. Final -->
+    <div class="tl-row" role="listitem">
+      <div class="tl-date">Jue 27 ago<br>4:00 PM</div>
+      <div class="tl-spine">
+        <div class="tl-dot dot-green" aria-hidden="true"></div>
+      </div>
+      <div class="tl-content">
+        <span class="tl-tag tag-green">Final</span>
+        <div class="tl-title">Pitches y ceremonia de premiación</div>
+        <div class="tl-desc">
+          Los equipos finalistas presentan ante la marca y el panel de jueces.
+          Todos los equipos están invitados a presenciar los pitches y la premiación, y a tomarse la foto conmemorativa.
+        </div>
+        <div class="tl-location">
+          <i class="ti ti-map-pin" aria-hidden="true"></i>
+          <strong style="color:var(--text)">Teatro CCU BUAP · Puebla</strong>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tl-grid -->
+</section>
+
+<hr class="divider" />
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  PREMIOS                                             ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="prizes-section section" id="premios" aria-labelledby="premios-heading">
+  <p class="eyebrow">Premios &amp; reconocimientos</p>
+  <h2 class="section-title" id="premios-heading">Qué puede ganar tu equipo</h2>
+  <p class="section-sub">
+    El equipo Grand Prix sube al Nacional. Hay 6 categorías donde cualquier equipo puede destacar —
+    y todos los que presenten pitch obtienen certificado.
+  </p>
+
+  <div class="prize-main">
+    <span class="prize-badge-gp">Grand Prix</span>
+    <div class="prize-title">El mayor reconocimiento de HackAdton Puebla</div>
+    <ul class="prize-list">
+      <li><strong style="color:var(--lime)">Trofeo</strong> para la universidad + medallas individuales para el equipo</li>
+      <li>Pase directo al <strong style="color:var(--lime)">HackAdton Nacional</strong></li>
+      <li><strong style="color:var(--lime)">6 becas del 100%</strong> en Essentials Bootcamp o Advanced de AdCademy</li>
+      <li>Acceso al <strong style="color:var(--lime)">Adcademy Journey</strong> para conseguir tu primer empleo</li>
+      <li>6 licencias anuales de <strong style="color:var(--lime)">Gemini Pro</strong></li>
+    </ul>
+  </div>
+
+
+  <br>
+
+  <div class="prize-main">
+    <span class="prize-badge-gp">Premios por categoría</span>
+    <div class="prize-title"> </div>
+    <ul class="prize-list">
+      <li><strong style="color:var(--lime)">Trofeo</strong> para la universidad + medallas individuales para el equipo</li>
+      <li><strong style="color:var(--lime)">6 becas del 50%</strong> en Essentials Bootcamp o Advanced de AdCademy</li>
+      <li>Acceso al <strong style="color:var(--lime)">Adcademy Journey</strong> para conseguir tu primer empleo</li>
+    </ul>
+  </div>
+  <p style="font-family:var(--font-cond);font-size:11px;font-weight:600;color:var(--muted);margin-bottom:10px;letter-spacing:.5px;text-transform:uppercase">
+  
+  </p>
+  <div class="cats-grid">
+    <div class="cat-item">
+      <div class="cat-icon c-lime"><i class="ti ti-bulb" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Concepto Creativo</div>
+    </div>
+    <div class="cat-item">
+      <div class="cat-icon c-blue"><i class="ti ti-speakerphone" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Estrategia de Comunicación</div>
+    </div>
+    <div class="cat-item">
+      <div class="cat-icon c-purple"><i class="ti ti-microphone" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Pitch</div>
+    </div>
+    <div class="cat-item">
+      <div class="cat-icon c-orange"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Planeación de Medios</div>
+    </div>
+    <div class="cat-item">
+      <div class="cat-icon c-pink"><i class="ti ti-palette" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Art &amp; Craft</div>
+    </div>
+    <div class="cat-item">
+      <div class="cat-icon c-teal"><i class="ti ti-cpu" aria-hidden="true"></i></div>
+      <div class="cat-label">Mejor Despliegue Tecnológico</div>
+    </div>
+  </div>
+  <div class="cert-note">
+    <strong style="color:var(--text)">Todos los equipos que presenten pitch</strong>
+    reciben certificado individual en web3.0.
+  </div>
+</section>
+
+<hr class="divider" />
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="reg-section" id="registro" aria-labelledby="reg-heading">
+  <div class="reg-inner">
+    <div class="reg-open-badge">Convocatoria abierta</div>
+    <h2 class="reg-title" id="reg-heading">Inscribe a tu equipo ahora</h2>
+    <p class="reg-sub">
+      El registro es en línea y gratuito.
+      Solo necesitas tener listo lo siguiente:
+    </p>
+
+    <div class="reg-checklist" role="list">
+      <div class="reg-checklist-title">Prepara antes de iniciar</div>
+      <ul>
+        <li role="listitem"><i class="ti ti-check" aria-hidden="true"></i> Nombres de 4–5 estudiantes de tu universidad</li>
+        <li role="listitem"><i class="ti ti-check" aria-hidden="true"></i> Datos del tutor o tutora</li>
+        <li role="listitem"><i class="ti ti-check" aria-hidden="true"></i> Foto de equipo</li>
+        <li role="listitem"><i class="ti ti-check" aria-hidden="true"></i> ~10 minutos disponibles (puedes guardar borrador)</li>
+      </ul>
+    </div>
+
+    <!-- CUPOS LIMITADOS -->
+    <div class="cupos-warning" role="alert">
+      <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+      <span><strong>Cupos limitados.</strong> Los lugares se asignan por orden de inscripción. Asegura el tuyo antes del 7 de agosto.</span>
+    </div>
+
+    <a class="btn-primary" href="https://hackadton.com.mx#registro-puebla" target="_blank" rel="noopener"
+       style="font-size:16px;padding:16px 40px">
+      Comenzar inscripción ↗
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  NEXT PUEBLA 2026                                    ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="next-section" id="next-puebla" aria-labelledby="next-heading">
+  <div class="next-inner">
+    <div class="next-hero-badge">
+      <i class="ti ti-sparkles" aria-hidden="true"></i>
+      Para Profesionales
+    </div>
+    <h2 class="next-title" id="next-heading">
+      <span>Next Puebla 2026</span><br>
+      Páneles Adtech &amp; Networking
+    </h2>
+    <p class="next-sub">
+      Una tarde de conversaciones con expertos de la industria para actualizar a la comunidad marketera en las 3 tendencias más relevantes de Adtech.
+      Abierto a marcas, agencias y universitarios — inscritos en HackAdton o no.
+    </p>
+
+    <div class="next-meta-strip">
+      <div class="next-meta-item">
+        <i class="ti ti-calendar" aria-hidden="true"></i>
+        <span><strong>Miércoles 26 de agosto de 2026</strong></span>
+      </div>
+      <div class="next-meta-item">
+        <i class="ti ti-map-pin" aria-hidden="true"></i>
+        <span><strong>Teatro CCU BUAP</strong> · Puebla</span>
+      </div>
+      <div class="next-meta-item">
+        <i class="ti ti-microphone-2" aria-hidden="true"></i>
+        <span>Páneles + Networking</span>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin-bottom:12px">Tendencias Adtech</p>
+    <div class="next-topics-grid">
+      <div class="next-topic-card">
+        <div class="next-topic-num">Omnicanalidad</div>
+        <div class="next-topic-label">TBD</div>
+      </div>
+      <div class="next-topic-card">
+        <div class="next-topic-num">Creator Economy</div>
+        <div class="next-topic-label">TBD</div>
+      </div>
+      <div class="next-topic-card">
+        <div class="next-topic-num">Gaming</div>
+        <div class="next-topic-label">TBD</div>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin-bottom:12px">¿A quién va dirigido?</p>
+    <div class="next-audience-grid">
+      <div class="next-audience-card">
+        <div class="next-audience-icon"><i class="ti ti-building-store" aria-hidden="true"></i></div>
+        <div class="next-audience-label">Marcas</div>
+        <div class="next-audience-sub">Equipos de marketing y comunicación</div>
+      </div>
+      <div class="next-audience-card">
+        <div class="next-audience-icon"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
+        <div class="next-audience-label">Agencias</div>
+        <div class="next-audience-sub">Publicidad, digital y medios</div>
+      </div>
+      <div class="next-audience-card">
+        <div class="next-audience-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <div class="next-audience-label">Universitarios</div>
+        <div class="next-audience-sub">Estudiantes y docentes de Mkt, Comm, GD o afines</div>
+      </div>
+    </div>
+
+    <div class="next-reg-note">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>
+        El regístro indispensable para asistir al Next Puebla 2026 <strong> si no estás inscrito como participante en HackAdton Puebla 2026</strong>
+      </span>
+    </div>
+
+    <a class="btn-pink" href="https://hackadton.com.mx/#registro-puebla" target="_blank" rel="noopener">
+      Registrarse para Next Puebla ↗
+    </a>
+
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  PROFESIONALES                                       ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="section" id="profesionales" aria-labelledby="pro-heading">
+  <p class="eyebrow">Mentores · Speakers · Jueces</p>
+  <h2 class="section-title" id="pro-heading">Profesionales de la industria</h2>
+  <p class="section-sub">
+    Expertos que dirigen y colaboran en agencias, marcas y empresas tecnológicas sumándose a HackAdton Puebla 2026.
+    <br><br>
+    Los perfiles de Puebla se publicarán aquí próximamente.
+  </p>
+
+  <div class="pro-cards">
+    <div class="pro-card">
+      <div class="pro-icon"><i class="ti ti-users" aria-hidden="true"></i></div>
+      <div class="pro-title">Mentores</div>
+      <div class="pro-desc">Profesionales que ayudan a aterrizar la idea y elevar la propuesta priorizando y dando claridad al proyecto durante 20 minutos.</div>
+      <a class="pro-link" href="https://hackadton.com.mx/#registro-puebla" target="_blank">Registrarse como mentor ↗</a>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon" style="color:var(--orange)"><i class="ti ti-gavel" aria-hidden="true"></i></div>
+      <div class="pro-title">Jurado</div>
+      <div class="pro-desc">Perfiles que hoy dirigen agencias, marcas y empresas tecnológicas evalúan a lo largo de una semana y en la final.</div>
+      <a class="pro-link" href="https://hackadton.com.mx/#registro-puebla" target="_blank" style="color:var(--orange)">Registrarse como juez ↗</a>
+    </div>
+    <div class="pro-card">
+      <div class="pro-icon" style="color:var(--pink)"><i class="ti ti-microphone" aria-hidden="true"></i></div>
+      <div class="pro-title">Speakers</div>
+      <div class="pro-desc">Aprende de expertos reconocidos en la industria casos, contextos y decisiones reales. Talks en la sesión de arranque on-line del 13 de agosto.</div>
+      <a class="pro-link" href="https://hackadton.com.mx/#registro-puebla" target="_blank" style="color:var(--pink)">Registrarse como speaker ↗</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  FAQ                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <p class="eyebrow">Preguntas frecuentes</p>
+  <h2 class="section-title" id="faq-heading">Dudas antes de inscribirte</h2>
+  <div id="faq-list" role="list"></div>
+</section>
+
+<hr class="divider" />
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  SPONSORS                                            ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<section class="sponsors-section" id="sponsors" aria-label="Organizadores y patrocinadores">
+  <div class="sponsors-inner">
+    <p class="sponsors-eyebrow">Sponsors</p>
+    <div class="sponsors-grid">
+      <div class="sponsor-item">
+        <img src="buap.png" alt="BUAP" />
+      </div>
+      <div class="sponsor-item">
+        <img src="adtech.png" alt="Adtech" />
+      </div>
+      <div class="sponsor-item">
+        <img src="coparmex.png" alt="COPARMEX" />
+      </div>
+      <div class="sponsor-item">
+        <img src="mktclan.png" alt="mkt clan" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  FOOTER                                              ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<footer style="border-top:1px solid var(--border);padding:24px;max-width:100%">
+  <div class="footer">
+    <span>© Adcademy</span>
+    <div class="footer-links">
+      <a href="https://hackadton.com.mx/bases-y-privacidad#bases" target="_blank" rel="noopener">Bases</a>
+      <a href="https://hackadton.com.mx/bases-y-privacidad#privacidad" target="_blank" rel="noopener">Aviso de privacidad</a>
+      <a href="https://hackadton.com.mx" target="_blank" rel="noopener">hackadton.com.mx ↗</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ╔══════════════════════════════════════════════════════╗ -->
+<!-- ║  SCRIPTS                                             ║ -->
+<!-- ╚══════════════════════════════════════════════════════╝ -->
+<script>
+/* ── COUNTDOWN ─────────────────────────────────────────── */
+const kickoff = new Date('2026-08-13T10:00:00-06:00');
+
+function updateCountdown() {
+  const diff = kickoff - new Date();
+  if (diff <= 0) {
+    document.querySelector('.countdown-strip').innerHTML =
+      '<span style="font-size:14px;color:var(--lime)">🚀 ¡El HackAdton Puebla ha comenzado!</span>';
+    return;
+  }
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  const m = Math.floor((diff % 36e5) / 6e4);
+  const s = Math.floor((diff % 6e4) / 1e3);
+  document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+  document.getElementById('cd-hrs').textContent  = String(h).padStart(2, '0');
+  document.getElementById('cd-min').textContent  = String(m).padStart(2, '0');
+  document.getElementById('cd-sec').textContent  = String(s).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+/* ── FAQ ───────────────────────────────────────────────── */
+const faqs = [
+  {
+    q: '¿Quiénes pueden participar?',
+    a: 'Estudiantes universitarios de cualquier carrera: publicidad, mercadotecnia, creatividad, negocios o tecnología. No se requiere experiencia profesional previa; solo ganas de hacer equipo y curiosidad para resolver un reto real.'
+  },
+  {
+    q: '¿Cuántos integrantes necesita el equipo?',
+    a: 'Entre 4 y 5 integrantes. Todos deben ser estudiantes activos de la misma universidad. Necesitarás datos de cada integrante, tutor y foto de equipo para completar el registro.'
+  },
+  {
+    q: '¿Cuándo cierra la inscripción?',
+    a: 'El límite para inscribir equipos es el 7 de agosto. El registro es gratuito, en línea y en 6 pasos con borrador automático. Los cupos son limitados y se asignan por orden de inscripción.'
+  },
+  {
+    q: '¿Cuándo se entrega el brief?',
+    a: 'El jueves 13 de agosto durante el evento de apertura en línea. A partir de ese momento el reloj de 48 horas comienza.'
+  },
+  {
+    q: '¿Qué tenemos que subir el 15 de agosto?',
+    a: 'Antes de la 1:59 pm: (1) desarrollo en extenso de tu propuesta (10 págs. + presupuesto + bitácora de uso de IA), (2) deck de 10 diapositivas y (3) video pitch de máximo 2 minutos.'
+  },
+  {
+    q: '¿Dónde se hace la final y quién puede asistir?',
+    a: 'La final presencial es el jueves 27 de agosto a las 4:00 pm en el Teatro CCU BUAP. Solo los equipos anunciados el 23 de agosto presentan pitch ese día. Pero todos los equipos pueden asistir a presenciar los pitches, la premiación y aparecer en la foto conmemorativa.'
+  },
+  {
+    q: '¿El evento tiene costo?',
+    a: 'La inscripción de equipos es gratuita. Consulta las bases completas en hackadton.com.mx para condiciones específicas.'
+  },
+  {
+    q: '¿Qué reciben todos los equipos que participen?',
+    a: 'Todos los equipos que presenten pitch reciben certificado individual en web3.0. El equipo Grand Prix se lleva además trofeo, medallas, 6 becas del 100% en Essentials Bootcamp o Advanced, pase al Nacional y 6 licencias de Gemini Pro.'
+  },
+  {
+    q: '¿Qué es el Next Puebla 2026?',
+    a: 'Es un día adicional al HackAdton: una tarde de páneles con expertos de la industria y networking, centrada en 3 tendencias Adtech. Sucederá el miércoles 26 de agosto en el Teatro CCU BUAP, el día previo a la final de HackAdton. Está dirigida a marcas, agencias y estudiantes — inscritos en HackAdton o no.'
+  },
+  {
+    q: '¿Necesito registrarme por separado para el Next Puebla 2026?',
+    a: 'Sí. Si ya eres participante inscrito en HackAdton, tu lugar está incluido. Si no te registraste como participante, debes hacer un registro independiente para asistir al Next Puebla 2026.'
+  }
+];
+
+const faqList = document.getElementById('faq-list');
+faqs.forEach((f, i) => {
+  const div = document.createElement('div');
+  div.className = 'faq-item';
+  div.setAttribute('role', 'listitem');
+  div.innerHTML = `
+    <div class="faq-q" onclick="toggleFaq(${i}, this)" aria-expanded="false" role="button" tabindex="0">
+      <span>${f.q}</span>
+      <i class="ti ti-chevron-down" aria-hidden="true"></i>
+    </div>
+    <div class="faq-a" id="fa${i}" role="region">${f.a}</div>
+  `;
+  faqList.appendChild(div);
+});
+
+function toggleFaq(i, el) {
+  const answer = document.getElementById('fa' + i);
+  const icon   = el.querySelector('i');
+  const isOpen = answer.classList.toggle('open');
+  icon.style.transform = isOpen ? 'rotate(180deg)' : '';
+  el.setAttribute('aria-expanded', isOpen);
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.classList.contains('faq-q')) {
+    e.target.click();
+  }
+});
+</script>
+
+</body>
+</html>
