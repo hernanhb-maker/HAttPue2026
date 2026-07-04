@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FCCom MKT FEST 2026 · BUAP</title>
+<meta name="description" content="FCCom MKT FEST — 25 al 27 de agosto de 2026, Teatro CCU BUAP. MKT Dojo, Next Puebla y la Final de HackAdton Puebla en tres días.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  :root{
+    --navy:#0B1220;
+    --navy-2:#121D33;
+    --navy-3:#1C2C4A;
+    --paper:#F5F3EC;
+    --ink:#12182A;
+    --slate:#9FB3C8;
+    --cyan:#7FD8F2;
+    --amber:#E8A33D;   /* MKT Dojo */
+    --pink:#F472B6;    /* Next Puebla */
+    --lime:#A3E635;    /* HackAdton Final */
+    --radius:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--navy);
+    color:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;display:block;}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;background:rgba(11,18,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--navy-3);flex-wrap:wrap;}
+  .nav-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;}
+  .nav-brand .tag{font-size:9px;padding:2px 8px;border-radius:20px;background:var(--navy-3);color:var(--cyan);letter-spacing:.1em;}
+  .nav-links{display:flex;gap:18px;font-size:13px;color:var(--slate);flex-wrap:wrap;}
+  .nav-links a:hover{color:var(--paper);}
+
+  /* HERO */
+  .hero{padding:64px 24px 48px;text-align:center;border-bottom:1px solid var(--navy-3);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(127,216,242,.08) 0%, transparent 70%);pointer-events:none;}
+  .hero h1{font-size:clamp(34px,7vw,58px);line-height:1.05;margin-bottom:14px;position:relative;}
+  .hero h1 span{color:var(--cyan);}
+  .hero p{color:var(--slate);max-width:560px;margin:0 auto 28px;font-size:16px;line-height:1.6;position:relative;}
+  .day-pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;}
+  .day-pill{border:1px solid var(--navy-3);background:var(--navy-2);padding:10px 16px;border-radius:var(--radius);font-size:13px;display:flex;flex-direction:column;gap:2px;min-width:150px;}
+  .day-pill .d{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;}
+  .day-pill .e{font-weight:600;font-size:14px;}
+  .pill-dojo .d{color:var(--amber);} .pill-next .d{color:var(--pink);} .pill-final .d{color:var(--lime);}
+  .venue-note{margin-top:22px;font-size:13px;color:var(--slate);position:relative;}
+  .venue-note strong{color:var(--paper);}
+
+  /* SECTION GENERIC */
+  section.block{padding:56px 24px;border-bottom:1px solid var(--navy-3);}
+  .block h2{font-size:28px;margin-bottom:10px;}
+  .block .sub{color:var(--slate);font-size:14.5px;max-width:620px;line-height:1.6;margin-bottom:28px;}
+
+  /* ARC / ABOUT */
+  .arc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--navy-3);border:1px solid var(--navy-3);margin-top:8px;}
+  .arc-card{background:var(--navy-2);padding:22px 18px;}
+  .arc-card .n{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:.1em;}
+  .arc-card h3{font-size:16px;margin:8px 0 6px;}
+  .arc-card p{font-size:13px;color:var(--slate);line-height:1.55;}
+
+  /* DAY HEADER BAND per event */
+  .day-band{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .day-band .dot{width:9px;height:9px;border-radius:50%;}
+  .dot-dojo{background:var(--amber);} .dot-next{background:var(--pink);} .dot-final{background:var(--lime);}
+  .day-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--slate);margin-bottom:24px;}
+  .day-meta span{display:flex;align-items:center;gap:6px;}
+
+  /* SPINE for Dojo criteria */
+  .spine{position:relative;padding-left:30px;}
+  .spine::before{content:"";position:absolute;left:8px;top:4px;bottom:4px;width:1px;background:repeating-linear-gradient(var(--navy-3) 0 4px, transparent 4px 9px);}
+  .part{position:relative;padding:0 0 20px 22px;}
+  .part::before{content:"";position:absolute;left:-23px;top:4px;width:8px;height:8px;border-radius:50%;background:var(--navy);border:1.5px solid var(--amber);}
+  .part-num{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--amber);letter-spacing:.08em;display:block;margin-bottom:3px;}
+  .part-title{font-size:15.5px;font-weight:600;margin-bottom:3px;}
+  .part-name{font-size:13px;color:var(--cyan);}
+  .part-org{font-size:12.5px;color:var(--slate);}
+
+  /* CARD GRIDS (Next Puebla, HackAdton) */
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:6px;}
+  .mini-card{background:var(--navy-2);border:1px solid var(--navy-3);border-radius:var(--radius);padding:16px;}
+  .mini-card .ic{font-size:18px;margin-bottom:8px;}
+  .mini-card .t{font-weight:600;font-size:14px;margin-bottom:3px;}
+  .mini-card .s{font-size:12px;color:var(--slate);line-height:1.4;}
+  .ic-pink{color:var(--pink);} .ic-lime{color:var(--lime);} .ic-amber{color:var(--amber);}
+
+  .note-box{border-left:3px solid var(--cyan);background:var(--navy-2);border-radius:0 var(--radius) var(--radius) 0;padding:12px 16px;font-size:13px;color:var(--slate);margin-top:18px;line-height:1.6;}
+  .note-box strong{color:var(--paper);}
+
+  /* ORGANIZERS TABLE */
+  .org-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--navy-3);border:1px solid var(--navy-3);margin-top:8px;}
+  .org-card{background:var(--navy-2);padding:22px;}
+  .org-card h3{font-size:16px;margin-bottom:10px;}
+  .org-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .org-card li{font-size:13px;color:var(--slate);display:flex;gap:8px;}
+  .org-card li::before{content:"—";color:var(--cyan);flex-shrink:0;}
+
+  /* CTA */
+  .cta-section{text-align:center;padding:56px 24px;}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+  .btn{padding:13px 26px;border-radius:var(--radius);font-weight:600;font-size:14px;display:inline-block;border:1px solid transparent;cursor:pointer;}
+  .btn-amber{background:var(--amber);color:var(--navy);}
+  .btn-pink{background:var(--pink);color:var(--navy);}
+  .btn-lime{background:var(--lime);color:var(--navy);}
+  .btn-ghost{background:transparent;border-color:var(--navy-3);color:var(--paper);}
+
+  /* FOOTER */
+  footer{padding:28px 24px;text-align:center;font-size:12px;color:var(--slate);}
+  footer .sponsors{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;opacity:.7;}
+
+  @media(max-width:640px){
+    .arc-grid,.org-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">FCCom MKT FEST <span class="tag">2026</span></div>
+  <div class="nav-links">
+    <a href="#dojo">MKT Dojo · 25 ago</a>
+    <a href="#next">Next Puebla · 26 ago</a>
+    <a href="#final">Final HackAdton · 27 ago</a>
+    <a href="#organizadores">Organizadores</a>
+    <a href="#registro">Registro</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="eyebrow">Facultad de Ciencias de la Comunicación · BUAP</span>
+  <h1>Tres días, un mismo <span>ecosistema de marketing</span></h1>
+  <p>Del 25 al 27 de agosto, el Teatro CCU de la BUAP reúne a estudiantes, agencias, marcas y expertos de la industria en una secuencia que va de la idea a la ejecución: el criterio de un jurado, la conversación de la industria y la competencia que las pone a prueba.</p>
+  <div class="day-pills">
+    <div class="day-pill pill-dojo"><span class="d">MAR 25 AGO</span><span class="e">MKT Dojo</span></div>
+    <div class="day-pill pill-next"><span class="d">MIÉR 26 AGO</span><span class="e">Next Puebla 2026</span></div>
+    <div class="day-pill pill-final"><span class="d">JUE 27 AGO</span><span class="e">Final HackAdton Puebla</span></div>
+  </div>
+  <p class="venue-note">Sede: <strong>Teatro CCU, BUAP</strong> — el proceso de HackAdton Puebla arranca desde el <strong>13 de agosto en línea</strong>; lo presencial en el Teatro CCU son estos tres días.</p>
+</header>
+
+<!-- ARCO DEL FESTIVAL -->
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">El arco del festival</span>
+    <h2>De qué trata cada día</h2>
+    <p class="sub">Cada evento tiene su propia identidad, audiencia y organizador — pero juntos arman un recorrido completo para la comunidad marketera de Puebla.</p>
+    <div class="arc-grid">
+      <div class="arc-card">
+        <span class="n">01 · CRITERIO</span>
+        <h3>MKT Dojo</h3>
+        <p>Siete referentes de la industria desmontan, criterio por criterio, lo que un jurado busca en una competencia ganadora. Formato charlas estilo TED.</p>
+      </div>
+      <div class="arc-card">
+        <span class="n">02 · INDUSTRIA</span>
+        <h3>Next Puebla 2026</h3>
+        <p>Páneles de Adtech y networking para marcas, agencias y estudiantes — una tarde para conectar y actualizarse en las tendencias que están moviendo la industria.</p>
+      </div>
+      <div class="arc-card">
+        <span class="n">03 · COMPETENCIA</span>
+        <h3>Final HackAdton Puebla</h3>
+        <p>Los equipos finalistas de la competencia de 48 horas presentan pitch ante jurado y marca, cerrando con la ceremonia de premiación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MKT DOJO -->
+<section class="block" id="dojo">
+  <div class="wrap">
+    <div class="day-band"><span class="dot dot-dojo"></span><span class="eyebrow" style="margin:0;color:var(--amber)">25 de agosto · 9:30–18:00 h</span></div>
+    <h2>MKT Dojo</h2>
+    <p class="sub">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising.</p>
+    <div class="day-meta">
+      <span><i class="ti ti-map-pin"></i> Teatro CCU, BUAP</span>
+      <span><i class="ti ti-presentation"></i> 7 charlas estilo TED + panel</span>
+      <span><i class="ti ti-ticket"></i> Entrada libre, cupo limitado</span>
+    </div>
+
+    <div class="spine">
+      <div class="part">
+        <span class="part-num">00 / QUIENES LO HAN VIVIDO</span>
+        <p class="part-title">Qué cambia al ganar una competencia — Panel</p>
+        <p class="part-name">Karina Barrera, Ángel Valderrábano, Eugenia Gómez · Modera Vanessa Valadez</p>
+      </div>
+      <div class="part">
+        <span class="part-num">01 / IDEA</span>
+        <p class="part-title">Desarrollo de idea y concepto creativo</p>
+        <p class="part-name">Jorge León <span class="part-org">· CEO, Volátil</span></p>
+      </div>
+      <div class="part">
+        <span class="part-num">02 / ESTRATEGIA</span>
+        <p class="part-title">Desarrollo de estrategia de comunicación</p>
+        <p class="part-name">Por confirmar</p>
+      </div>
+      <div class="part">
+        <span class="part-num">03 / MEDIOS</span>
+        <p class="part-title">Planeación de medios</p>
+        <p class="part-name">Toño Orozco <span class="part-org">· CEO, Árbol de Medios</span></p>
+      </div>
+      <div class="part">
+        <span class="part-num">04 / CRAFT</span>
+        <p class="part-title">Art & craft</p>
+        <p class="part-name">Chucho Fernández <span class="part-org">· CCO, Birth Group</span></p>
+      </div>
+      <div class="part">
+        <span class="part-num">05 / TECNOLOGÍA</span>
+        <p class="part-title">Diseño de plataforma tecnológica</p>
+        <p class="part-name">Marco Alonso <span class="part-org">· CEO, WPBR</span></p>
+      </div>
+      <div class="part">
+        <span class="part-num">06 / PITCH</span>
+        <p class="part-title">Presentación de pitch</p>
+        <p class="part-name">Daniel Torres <span class="part-org">· CEO, QRTL</span></p>
+      </div>
+      <div class="part">
+        <span class="part-num">07 / DIRECCIÓN</span>
+        <p class="part-title">Dirección global del proyecto</p>
+        <p class="part-name">Arturo Ortiz <span class="part-org">· CEO, Birth Group</span></p>
+      </div>
+    </div>
+
+    <div class="note-box"><strong>Organiza:</strong> Facultad de Ciencias de la Comunicación, BUAP — con el apoyo de Mkt Clan, ADD y AVE Centro.</div>
+  </div>
+</section>
+
+<!-- NEXT PUEBLA -->
+<section class="block" id="next">
+  <div class="wrap">
+    <div class="day-band"><span class="dot dot-next"></span><span class="eyebrow" style="margin:0;color:var(--pink)">26 de agosto</span></div>
+    <h2>Next Puebla 2026</h2>
+    <p class="sub">Una tarde de páneles con expertos de la industria y networking para actualizar a la comunidad marketera en las tendencias más relevantes de Adtech. Abierto a marcas, agencias y universitarios, estén o no inscritos en HackAdton.</p>
+    <div class="day-meta">
+      <span><i class="ti ti-map-pin"></i> Teatro CCU, BUAP</span>
+      <span><i class="ti ti-microphone-2"></i> Páneles + networking</span>
+    </div>
+
+    <span class="eyebrow" style="color:var(--pink)">Tendencias Adtech</span>
+    <div class="card-grid">
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-devices"></i></div><div class="t">Omnicanalidad</div><div class="s">Por confirmar</div></div>
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-users-group"></i></div><div class="t">Creator Economy</div><div class="s">Por confirmar</div></div>
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-device-gamepad-2"></i></div><div class="t">Gaming</div><div class="s">Por confirmar</div></div>
+    </div>
+
+    <span class="eyebrow" style="margin-top:24px;color:var(--pink)">¿A quién va dirigido?</span>
+    <div class="card-grid">
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-building-store"></i></div><div class="t">Marcas</div><div class="s">Equipos de marketing y comunicación</div></div>
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-briefcase"></i></div><div class="t">Agencias</div><div class="s">Publicidad, digital y medios</div></div>
+      <div class="mini-card"><div class="ic ic-pink"><i class="ti ti-school"></i></div><div class="t">Universitarios</div><div class="s">Estudiantes y docentes de Mkt, Comm, GD o afines</div></div>
+    </div>
+
+    <div class="note-box"><strong>Organiza:</strong> Adcademy. La Facultad de Ciencias de la Comunicación, BUAP participa como sponsor y sede. <br><strong>Registro:</strong> incluido si ya eres participante de HackAdton; requiere registro independiente si no.</div>
+  </div>
+</section>
+
+<!-- FINAL HACKADTON -->
+<section class="block" id="final">
+  <div class="wrap">
+    <div class="day-band"><span class="dot dot-final"></span><span class="eyebrow" style="margin:0;color:var(--lime)">27 de agosto · 4:00 PM</span></div>
+    <h2>Final HackAdton Puebla 2026</h2>
+    <p class="sub">Los equipos finalistas de la competencia interuniversitaria de marketing digital presentan su pitch ante la marca y el panel de jueces, seguido de la ceremonia de premiación.</p>
+    <div class="day-meta">
+      <span><i class="ti ti-map-pin"></i> Teatro CCU, BUAP</span>
+      <span><i class="ti ti-trophy"></i> Pitches + premiación</span>
+      <span><i class="ti ti-camera"></i> Foto conmemorativa</span>
+    </div>
+
+    <div class="note-box">
+      <strong>El camino hasta la final:</strong> HackAdton Puebla arranca el 13 de agosto en línea (briefing y 48 horas de desarrollo), con entrega de proyectos el 15 de agosto y anuncio de finalistas el 23 de agosto. El 27 de agosto en el Teatro CCU es la etapa presencial: solo los equipos finalistas presentan pitch, pero <strong>todos los equipos están invitados</strong> a presenciarlo.
+    </div>
+
+    <div class="card-grid" style="margin-top:20px">
+      <div class="mini-card"><div class="ic ic-lime"><i class="ti ti-award"></i></div><div class="t">Grand Prix</div><div class="s">Trofeo, pase al Nacional, becas y licencias</div></div>
+      <div class="mini-card"><div class="ic ic-lime"><i class="ti ti-medal"></i></div><div class="t">6 categorías</div><div class="s">Idea, estrategia, medios, craft, tecnología, pitch</div></div>
+      <div class="mini-card"><div class="ic ic-lime"><i class="ti ti-certificate"></i></div><div class="t">Certificado</div><div class="s">Para todo equipo que presente pitch</div></div>
+    </div>
+
+    <div class="note-box"><strong>Organiza:</strong> Adcademy. La Facultad de Ciencias de la Comunicación, BUAP participa como sponsor y sede.</div>
+  </div>
+</section>
+
+<!-- ORGANIZADORES -->
+<section class="block" id="organizadores">
+  <div class="wrap">
+    <span class="eyebrow">Transparencia</span>
+    <h2>Quién organiza qué</h2>
+    <p class="sub">FCCom MKT FEST agrupa tres eventos con distintos organizadores bajo una misma sede y semana.</p>
+    <div class="org-grid">
+      <div class="org-card">
+        <h3 style="color:var(--amber)">MKT Dojo · 25 ago</h3>
+        <ul>
+          <li>Organiza: Facultad de Ciencias de la Comunicación, BUAP</li>
+          <li>Apoyo: Mkt Clan</li>
+          <li>Apoyo: ADD</li>
+          <li>Apoyo: AVE Centro</li>
+        </ul>
+      </div>
+      <div class="org-card">
+        <h3 style="color:var(--pink)">Next Puebla &amp; Final HackAdton · 26–27 ago</h3>
+        <ul>
+          <li>Organiza: Adcademy</li>
+          <li>Sponsor y sede: Facultad de Ciencias de la Comunicación, BUAP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRO -->
+<section class="cta-section" id="registro">
+  <div class="wrap">
+    <span class="eyebrow">Registro</span>
+    <h2>Asegura tu lugar en cada día</h2>
+    <p class="sub" style="margin:0 auto">El registro es independiente para cada evento — revisa cuál te corresponde según tu perfil.</p>
+    <div class="cta-row">
+      <a class="btn btn-amber" href="#dojo">Registro MKT Dojo →</a>
+      <a class="btn btn-pink" href="https://hackadton.com.mx/#registro-puebla" target="_blank" rel="noopener">Registro Next Puebla →</a>
+      <a class="btn btn-lime" href="https://hackadton.com.mx/#registro-puebla" target="_blank" rel="noopener">Inscribir equipo HackAdton →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="sponsors mono">BUAP · Facultad de Ciencias de la Comunicación &nbsp;·&nbsp; Adcademy &nbsp;·&nbsp; Mkt Clan &nbsp;·&nbsp; Adtech &nbsp;·&nbsp; COPARMEX</div>
+  <div>© 2026 FCCom MKT FEST — Facultad de Ciencias de la Comunicación, BUAP &amp; Adcademy</div>
+</footer>
+
+</body>
+</html>
