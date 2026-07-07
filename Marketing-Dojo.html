@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MKT Dojo — Puebla</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-2:#12294B;
+    --navy-3:#1B3760;
+    --cyan:#7FD8F2;
+    --cyan-dim:#4C7E96;
+    --paper:#F5F3EC;
+    --paper-2:#EAE6D9;
+    --amber:#E8A33D;
+    --amber-dim:#9C6B24;
+    --ink:#12182A;
+    --slate:#9FB3C8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--navy);}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{
+    max-width:920px;
+    margin:0 auto;
+    background:var(--navy);
+    position:relative;
+    overflow:hidden;
+    border-left:1px solid var(--navy-3);
+    border-right:1px solid var(--navy-3);
+  }
+  .blueprint-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--navy-3) 1px, transparent 1px),
+      linear-gradient(90deg, var(--navy-3) 1px, transparent 1px);
+    background-size:28px 28px;
+    opacity:0.35;
+    pointer-events:none;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--cyan);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:56px 48px 44px;
+    border-bottom:1px solid var(--navy-3);
+  }
+  .hero-tag{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:26px;
+  }
+  .hero-tag .dot{width:7px;height:7px;background:var(--amber);border-radius:50%;}
+  h1.title{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:56px;
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    color:var(--paper);
+    margin:0 0 20px;
+    max-width:680px;
+  }
+  h1.title em{
+    font-style:normal;
+    color:var(--cyan);
+  }
+  .hero-sub{
+    font-size:17px;
+    line-height:1.55;
+    color:var(--slate);
+    max-width:520px;
+    margin:0 0 32px;
+  }
+  .info-row{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .info-pill{
+    display:flex; flex-direction:column; gap:2px;
+    border:1px solid var(--navy-3);
+    background:var(--navy-2);
+    padding:10px 18px;
+    min-width:150px;
+  }
+  .info-pill .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--cyan-dim);text-transform:uppercase;}
+  .info-pill .v{font-size:15px;color:var(--paper);font-weight:500;margin-top:3px;}
+
+  /* corner ticks - blueprint framing device */
+  .corner{position:absolute;width:16px;height:16px;border:1.5px solid var(--cyan-dim);opacity:.7;}
+  .corner.tl{top:18px;left:18px;border-right:none;border-bottom:none;}
+  .corner.tr{top:18px;right:18px;border-left:none;border-bottom:none;}
+
+  /* ---------- EL PLANO (spine list) ---------- */
+  .plano{
+    position:relative;
+    padding:52px 48px 44px;
+  }
+  .section-head{margin-bottom:6px;}
+  .section-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:26px; font-weight:600; color:var(--paper); margin:6px 0 8px;
+  }
+  .section-desc{color:var(--slate); font-size:14.5px; max-width:520px; margin:0 0 36px; line-height:1.55;}
+
+  .spine{
+    position:relative;
+    padding-left:34px;
+  }
+  .spine::before{
+    content:"";
+    position:absolute;
+    left:9px; top:6px; bottom:6px;
+    width:1px;
+    background:repeating-linear-gradient(var(--cyan-dim) 0 4px, transparent 4px 9px);
+  }
+  .part{
+    position:relative;
+    padding:0 0 30px 26px;
+    border-left:none;
+  }
+  .part:last-child{padding-bottom:2px;}
+  .part::before{
+    content:"";
+    position:absolute;
+    left:-25px; top:5px;
+    width:9px; height:9px;
+    border-radius:50%;
+    background:var(--navy);
+    border:1.5px solid var(--amber);
+  }
+  .part-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px; color:var(--amber); letter-spacing:.08em;
+    margin-bottom:4px; display:block;
+  }
+  .part-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:19px; font-weight:600; color:var(--paper);
+    margin:0 0 6px;
+  }
+  .part-meta{
+    display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline;
+  }
+  .part-name{font-size:14.5px; color:var(--cyan); font-weight:500;}
+  .part-org{font-size:13.5px; color:var(--slate);}
+
+  /* ---------- TIMELINE STRIP ---------- */
+  .timeline-wrap{
+    background:var(--paper);
+    padding:44px 48px 40px;
+    color:var(--ink);
+  }
+  .timeline-wrap .section-title{color:var(--ink);}
+  .timeline-wrap .eyebrow{color:var(--amber-dim);}
+  .timeline-wrap .section-desc{color:#5A6072;}
+
+  .tline{
+    border-top:1px solid #D8D2C0;
+  }
+  .trow{
+    display:grid;
+    grid-template-columns:120px 1fr auto;
+    gap:14px;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #D8D2C0;
+    font-size:14px;
+  }
+  .trow .t{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--amber-dim); font-weight:500;}
+  .trow .a{color:var(--ink); font-weight:500;}
+  .trow .b{color:#6B7180; font-size:13px; text-align:right;}
+  .trow.dim .a, .trow.dim .t{color:#9B9584;}
+  .trow.break{background:#EFEAD9;}
+
+  /* ---------- WHY ---------- */
+  .why{
+    background:var(--paper);
+    padding:6px 48px 50px;
+  }
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:#D8D2C0;
+    border:1px solid #D8D2C0;
+    margin-top:22px;
+  }
+  .why-card{
+    background:var(--paper);
+    padding:22px 20px;
+  }
+  .why-card .num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber-dim);letter-spacing:.1em;}
+  .why-card h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:16px; margin:8px 0 8px; color:var(--ink); font-weight:600;
+  }
+  .why-card p{font-size:13.5px; line-height:1.5; color:#5A6072; margin:0;}
+
+  /* ---------- TITLE BLOCK / FOOTER ---------- */
+  .titleblock-outer{
+    background:var(--navy);
+    padding:44px 48px 40px;
+    position:relative;
+    border-top:1px solid var(--navy-3);
+  }
+  .tb-lead{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
+    margin-bottom:26px;
+  }
+  .tb-lead h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:24px; color:var(--paper); margin:0; max-width:420px; line-height:1.25;
+  }
+  .cta{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--amber); color:var(--navy);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; font-weight:500; letter-spacing:.04em;
+    padding:12px 20px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .titleblock{
+    border:1px solid var(--navy-3);
+  }
+  .tb-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--navy-3);
+  }
+  .tb-row:last-child{border-bottom:none;}
+  .tb-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--navy-3);
+  }
+  .tb-cell:last-child{border-right:none;}
+  .tb-cell .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:var(--cyan-dim);text-transform:uppercase;}
+  .tb-cell .v{font-size:13.5px;color:var(--paper);margin-top:4px;}
+
+  .footnote{
+    margin-top:20px;
+    font-size:11.5px;
+    color:var(--slate);
+    line-height:1.6;
+  }
+
+  @media (max-width:640px){
+    .hero, .plano, .timeline-wrap, .why, .titleblock-outer{padding-left:24px;padding-right:24px;}
+    h1.title{font-size:38px;}
+    .trow{grid-template-columns:90px 1fr; grid-template-areas:"t a" "t b";}
+    .trow .b{grid-column:2; text-align:left;}
+    .why-grid{grid-template-columns:1fr;}
+    .tb-row{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="blueprint-grid"></div>
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span class="eyebrow">BUAP · Facultad de Ciencias de la Comunicación</span>
+    </div>
+    <h1 class="title">Marketing Dojo<br><em>Puebla</em></h1>
+    <p class="hero-sub">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising. Un plano completo para que los equipos de Puebla compitan — y ganen.</p>
+    <div class="info-row">
+      <div class="info-pill"><span class="k">Fecha</span><span class="v">25 de agosto, 2026</span></div>
+      <div class="info-pill"><span class="k">Sede</span><span class="v">Teatro CCU, BUAP</span></div>
+      <div class="info-pill"><span class="k">Horario</span><span class="v">9:30 – 18:00 h</span></div>
+      <div class="info-pill"><span class="k">Formato</span><span class="v">7 charlas · estilo TED</span></div>
+    </div>
+  </section>
+
+  <!-- EL PLANO -->
+  <section class="plano">
+    <div class="blueprint-grid" style="opacity:0.18;"></div>
+    <div class="section-head">
+      <span class="eyebrow">El plano</span>
+      <h2 class="section-title">Los 7 criterios, en orden de construcción</h2>
+      <p class="section-desc">Así se arma un caso ganador, de la idea a la dirección del proyecto — el mismo orden en el que un jurado lo evalúa.</p>
+    </div>
+    <div class="spine">
+
+      <div class="part">
+        <span class="part-num">00 / QUIENES LO HAN VIVIDO</span>
+        <p class="part-title">Qué cambia al ganar una competencia - Panel</p>
+        <div class="part-meta">
+          <span class="part-name">Karina Barrera (Effie College 2023), Ángel Valderrábano (Hackadton 2025), Eugenia Gómez (HackAdton 2026). Modera Vanessa Valadez (Effie College 2021)</span>
+          <span class="part-org">Strategy Manager, Birth Group</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">01 / IDEA</span>
+        <p class="part-title">Desarrollo de idea y concepto creativo</p>
+        <div class="part-meta">
+          <span class="part-name">Jorge León</span>
+          <span class="part-org">CEO, Volátil</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">02 / ESTRATEGIA</span>
+        <p class="part-title">Desarrollo de estrategia de comunicación</p>
+        <div class="part-meta">
+          <span class="part-name">TBD</span>
+          <span class="part-org">TBD</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">03 / MEDIOS</span>
+        <p class="part-title">Planeación de medios</p>
+        <div class="part-meta">
+          <span class="part-name">Toño Orozco</span>
+          <span class="part-org">CEO, Árbol de Medios</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">04 / CRAFT</span>
+        <p class="part-title">Art &amp; craft</p>
+        <div class="part-meta">
+          <span class="part-name">Chucho Fernández</span>
+          <span class="part-org">CCO, Birth Group</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">05 / TECNOLOGÍA</span>
+        <p class="part-title">Diseño de plataforma tecnológica</p>
+        <div class="part-meta">
+          <span class="part-name">Marco Alonso</span>
+          <span class="part-org">CEO, WPBR</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">06 / PITCH</span>
+        <p class="part-title">Presentación de pitch</p>
+        <div class="part-meta">
+          <span class="part-name">Daniel Torres</span>
+          <span class="part-org">CEO, QRTL</span>
+        </div>
+      </div>
+
+      <div class="part">
+        <span class="part-num">07 / DIRECCIÓN</span>
+        <p class="part-title">Dirección global del proyecto</p>
+        <div class="part-meta">
+          <span class="part-name">Arturo Ortiz</span>
+          <span class="part-org">CEO, Birth Group</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline-wrap">
+    <span class="eyebrow">Itinerario del día</span>
+    <h2 class="section-title">25 de agosto — Teatro CCU</h2>
+    <p class="section-desc">Siete conferencias de 30 minutos, un panel de cierre y espacio para comer y hacer networking.</p>
+    <div class="tline">
+      <div class="trow"><span class="t">9:30</span><span class="a">Registro y bienvenida</span><span class="b">Café de cortesía</span></div>
+      <div class="trow dim"><span class="t">10:00</span><span class="a">Inauguración oficial</span><span class="b"></span></div>
+      <div class="trow"><span class="t">10:15</span><span class="a">00 · Qué cambia al ganar una competencia - Panel</span><span class="b">Vanessa Valadez - Moderadora</span></div>
+      <div class="trow"><span class="t">10:50</span><span class="a">01 · Idea y concepto creativo</span><span class="b">Jorge León</span></div>
+      <div class="trow"><span class="t">11:25</span><span class="a">02 · Estrategia de comunicación</span><span class="b">TBD</span></div>
+      <div class="trow"><span class="t">12:00</span><span class="a">03 · Planeación de medios</span><span class="b">Toño Orozco</span></div>
+      <div class="trow"><span class="t">12:35</span><span class="a">04 · Art &amp; craft</span><span class="b">Chucho Fernández</span></div>
+      <div class="trow"><span class="t">13:10</span><span class="a">05 · Plataforma tecnológica</span><span class="b">Marco Alonso</span></div>
+      <div class="trow break"><span class="t">13:45</span><span class="a">Comida</span><span class="b">Receso de 2 h</span></div>
+      <div class="trow"><span class="t">15:45</span><span class="a">06 · Presentación de pitch</span><span class="b">Daniel Torres</span></div>
+      <div class="trow"><span class="t">16:20</span><span class="a">07 · Dirección global del proyecto</span><span class="b">Arturo Ortiz</span></div>
+      <div class="trow dim"><span class="t">16:55</span><span class="a">Panel de cierre con los 7 ponentes</span><span class="b"></span></div>
+      <div class="trow dim"><span class="t">17:20</span><span class="a">Networking y cierre</span><span class="b"></span></div>
+    </div>
+  </section>
+
+  
+
+  <!-- TITLE BLOCK / CTA -->
+  <section class="titleblock-outer">
+    <div class="blueprint-grid" style="opacity:0.18;"></div>
+    <div class="tb-lead">
+      <h2>Evento sin costo abierto a estudiantes y docentes.<br>Cupo límitado - Registro obligatorio</h2>
+      <a class="cta" href="#" onclick="return false;">Reservar lugar →</a>
+    </div>
+    <div class="titleblock">
+      <div class="tb-row">
+        <div class="tb-cell"><div class="k">Ubicación</div><div class="v">Teatro CCU, BUAP</div></div>
+        <div class="tb-cell"><div class="k">Horario</div><div class="v">9:30 – 18:00 h</div></div>
+        <div class="tb-cell"><div class="k">Organiza</div><div class="v">Fac. Ciencias de la Comunicación</div></div>
+              </div>
+    </div>
+    <p class="footnote">Benemérita Universidad Autónoma de Puebla. Consulta el programa completo del evento con la organización de la Facultad de Ciencias de la Comunicación.</p>
+  </section>
+
+</div>
+</body>
+</html>
