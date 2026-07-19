@@ -2,428 +2,618 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>MKT Dojo — Puebla</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MKT Dojo — Puebla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
   :root{
-    --navy:#0B1F3A;
-    --navy-2:#12294B;
-    --navy-3:#1B3760;
-    --cyan:#7FD8F2;
-    --cyan-dim:#4C7E96;
-    --paper:#F5F3EC;
-    --paper-2:#EAE6D9;
-    --amber:#E8A33D;
-    --amber-dim:#9C6B24;
-    --ink:#12182A;
-    --slate:#9FB3C8;
+    --bg:#0c0c0e;
+    --bg2:#141418;
+    --bg3:#1c1c22;
+    --lime:#b8ff4e;
+    --purple:#a78bfa;
+    --text:#f2f2f0;
+    --muted:#9a9aa2;
+    --border:#26262e;
   }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--navy);}
+  *{box-sizing:border-box; margin:0; padding:0;}
   body{
-    font-family:'Inter',sans-serif;
-    color:var(--paper);
-    -webkit-font-smoothing:antialiased;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Barlow', sans-serif;
+    line-height:1.5;
   }
-  .sheet{
-    max-width:920px;
-    margin:0 auto;
-    background:var(--navy);
-    position:relative;
-    overflow:hidden;
-    border-left:1px solid var(--navy-3);
-    border-right:1px solid var(--navy-3);
+  h1,h2,h3,.condensed{ font-family:'Barlow Condensed', sans-serif; letter-spacing:.02em; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- Header ---------- */
+  header.top{
+    padding:18px 24px;
+    display:flex; align-items:center; gap:12px;
+    border-bottom:1px solid var(--border);
+    background:var(--bg2);
+    position:sticky; top:0; z-index:20;
   }
-  .blueprint-grid{
-    position:absolute;
-    inset:0;
-    background-image:
-      linear-gradient(var(--navy-3) 1px, transparent 1px),
-      linear-gradient(90deg, var(--navy-3) 1px, transparent 1px);
-    background-size:28px 28px;
-    opacity:0.35;
-    pointer-events:none;
-  }
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    letter-spacing:.18em;
+  header.top img.logo{ height:32px; }
+  header.top .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
     text-transform:uppercase;
-    color:var(--cyan);
+    font-size:13px;
+    letter-spacing:.12em;
+    color:var(--muted);
   }
+  header.top .dot{ color:var(--lime); }
 
-  /* ---------- HERO ---------- */
+  /* ---------- Hero ---------- */
   .hero{
-    position:relative;
-    padding:56px 48px 44px;
-    border-bottom:1px solid var(--navy-3);
+    padding:64px 24px 40px;
+    max-width:1100px;
   }
-  .hero-tag{
-    display:flex; align-items:center; gap:10px;
-    margin-bottom:26px;
+  .hero-top{
+    display:flex;
+    align-items:flex-end;
+    gap:32px;
+    flex-wrap:wrap;
+    margin-bottom:18px;
   }
-  .hero-tag .dot{width:7px;height:7px;background:var(--amber);border-radius:50%;}
-  h1.title{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:56px;
-    line-height:1.02;
-    letter-spacing:-0.01em;
-    color:var(--paper);
-    margin:0 0 20px;
-    max-width:680px;
+  .hero-top img.hero-logo{
+    height:240px;
+    width:auto;
+    flex:0 0 auto;
   }
-  h1.title em{
-    font-style:normal;
-    color:var(--cyan);
+  .hero-top .hero-text{ flex:1 1 320px; min-width:280px; }
+  .hero .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    color:var(--lime);
+    letter-spacing:.14em;
+    font-size:13px;
+    margin-bottom:10px;
   }
-  .hero-sub{
+  .hero h1{
+    font-weight:800;
+    font-size:clamp(38px, 7vw, 64px);
+    line-height:1.0;
+  }
+  .hero h1 em{ color:var(--purple); font-style:normal; }
+  .hero p.desc{
+    color:var(--muted);
     font-size:17px;
-    line-height:1.55;
-    color:var(--slate);
-    max-width:520px;
-    margin:0 0 32px;
+    max-width:680px;
+    margin:20px 0 32px;
   }
-  .info-row{
-    display:flex; flex-wrap:wrap; gap:10px;
-  }
-  .info-pill{
-    display:flex; flex-direction:column; gap:2px;
-    border:1px solid var(--navy-3);
-    background:var(--navy-2);
-    padding:10px 18px;
-    min-width:150px;
-  }
-  .info-pill .k{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--cyan-dim);text-transform:uppercase;}
-  .info-pill .v{font-size:15px;color:var(--paper);font-weight:500;margin-top:3px;}
-
-  /* corner ticks - blueprint framing device */
-  .corner{position:absolute;width:16px;height:16px;border:1.5px solid var(--cyan-dim);opacity:.7;}
-  .corner.tl{top:18px;left:18px;border-right:none;border-bottom:none;}
-  .corner.tr{top:18px;right:18px;border-left:none;border-bottom:none;}
-
-  /* ---------- EL PLANO (spine list) ---------- */
-  .plano{
-    position:relative;
-    padding:52px 48px 44px;
-  }
-  .section-head{margin-bottom:6px;}
-  .section-title{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:26px; font-weight:600; color:var(--paper); margin:6px 0 8px;
-  }
-  .section-desc{color:var(--slate); font-size:14.5px; max-width:520px; margin:0 0 36px; line-height:1.55;}
-
-  .spine{
-    position:relative;
-    padding-left:34px;
-  }
-  .spine::before{
-    content:"";
-    position:absolute;
-    left:9px; top:6px; bottom:6px;
-    width:1px;
-    background:repeating-linear-gradient(var(--cyan-dim) 0 4px, transparent 4px 9px);
-  }
-  .part{
-    position:relative;
-    padding:0 0 30px 26px;
-    border-left:none;
-  }
-  .part:last-child{padding-bottom:2px;}
-  .part::before{
-    content:"";
-    position:absolute;
-    left:-25px; top:5px;
-    width:9px; height:9px;
-    border-radius:50%;
-    background:var(--navy);
-    border:1.5px solid var(--amber);
-  }
-  .part-num{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:11px; color:var(--amber); letter-spacing:.08em;
-    margin-bottom:4px; display:block;
-  }
-  .part-title{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:19px; font-weight:600; color:var(--paper);
-    margin:0 0 6px;
-  }
-  .part-meta{
-    display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline;
-  }
-  .part-name{font-size:14.5px; color:var(--cyan); font-weight:500;}
-  .part-org{font-size:13.5px; color:var(--slate);}
-
-  /* ---------- TIMELINE STRIP ---------- */
-  .timeline-wrap{
-    background:var(--paper);
-    padding:44px 48px 40px;
-    color:var(--ink);
-  }
-  .timeline-wrap .section-title{color:var(--ink);}
-  .timeline-wrap .eyebrow{color:var(--amber-dim);}
-  .timeline-wrap .section-desc{color:#5A6072;}
-
-  .tline{
-    border-top:1px solid #D8D2C0;
-  }
-  .trow{
+  .meta-grid{
     display:grid;
-    grid-template-columns:120px 1fr auto;
-    gap:14px;
-    align-items:center;
-    padding:12px 0;
-    border-bottom:1px solid #D8D2C0;
-    font-size:14px;
+    grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+    gap:16px;
+    max-width:800px;
   }
-  .trow .t{font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--amber-dim); font-weight:500;}
-  .trow .a{color:var(--ink); font-weight:500;}
-  .trow .b{color:#6B7180; font-size:13px; text-align:right;}
-  .trow.dim .a, .trow.dim .t{color:#9B9584;}
-  .trow.break{background:#EFEAD9;}
-
-  /* ---------- WHY ---------- */
-  .why{
-    background:var(--paper);
-    padding:6px 48px 50px;
+  .meta-grid .meta{
+    background:var(--bg2);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px 16px;
   }
-  .why-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:#D8D2C0;
-    border:1px solid #D8D2C0;
-    margin-top:22px;
+  .meta-grid .meta .label{
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+    margin-bottom:4px;
   }
-  .why-card{
-    background:var(--paper);
-    padding:22px 20px;
-  }
-  .why-card .num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--amber-dim);letter-spacing:.1em;}
-  .why-card h3{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:16px; margin:8px 0 8px; color:var(--ink); font-weight:600;
-  }
-  .why-card p{font-size:13.5px; line-height:1.5; color:#5A6072; margin:0;}
-
-  /* ---------- TITLE BLOCK / FOOTER ---------- */
-  .titleblock-outer{
-    background:var(--navy);
-    padding:44px 48px 40px;
-    position:relative;
-    border-top:1px solid var(--navy-3);
-  }
-  .tb-lead{
-    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
-    margin-bottom:26px;
-  }
-  .tb-lead h2{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:24px; color:var(--paper); margin:0; max-width:420px; line-height:1.25;
-  }
-  .cta{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--amber); color:var(--navy);
-    font-family:'IBM Plex Mono',monospace;
-    font-size:13px; font-weight:500; letter-spacing:.04em;
-    padding:12px 20px;
-    text-decoration:none;
-    white-space:nowrap;
-  }
-  .titleblock{
-    border:1px solid var(--navy-3);
-  }
-  .tb-row{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-bottom:1px solid var(--navy-3);
-  }
-  .tb-row:last-child{border-bottom:none;}
-  .tb-cell{
-    padding:12px 16px;
-    border-right:1px solid var(--navy-3);
-  }
-  .tb-cell:last-child{border-right:none;}
-  .tb-cell .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;color:var(--cyan-dim);text-transform:uppercase;}
-  .tb-cell .v{font-size:13.5px;color:var(--paper);margin-top:4px;}
-
-  .footnote{
-    margin-top:20px;
-    font-size:11.5px;
-    color:var(--slate);
-    line-height:1.6;
+  .meta-grid .meta .value{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:18px;
+    font-weight:700;
   }
 
   @media (max-width:640px){
-    .hero, .plano, .timeline-wrap, .why, .titleblock-outer{padding-left:24px;padding-right:24px;}
-    h1.title{font-size:38px;}
-    .trow{grid-template-columns:90px 1fr; grid-template-areas:"t a" "t b";}
-    .trow .b{grid-column:2; text-align:left;}
-    .why-grid{grid-template-columns:1fr;}
-    .tb-row{grid-template-columns:1fr 1fr;}
+    .hero-top{ flex-direction:column; align-items:flex-start; gap:20px; }
+    .hero-top img.hero-logo{ height:160px; }
+  }
+
+  /* ---------- Plano section ---------- */
+  section.plano{ padding:60px 24px 20px; max-width:1100px; margin:0 auto; }
+  .plano .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    color:var(--lime);
+    letter-spacing:.14em;
+    font-size:13px;
+    margin-bottom:10px;
+  }
+  .plano h2{ font-size:32px; font-weight:700; margin-bottom:14px; }
+  .plano > p{ color:var(--muted); max-width:640px; margin-bottom:44px; }
+
+  .conf{
+    border-top:1px solid var(--border);
+    padding:36px 0;
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:28px;
+  }
+  .conf:last-child{ border-bottom:1px solid var(--border); }
+  .conf .conf-tag{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--purple);
+  }
+  .conf .conf-num{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:44px;
+    font-weight:800;
+    color:var(--bg3);
+    -webkit-text-stroke:1px var(--border);
+    line-height:1;
+    margin-top:4px;
+  }
+  .conf .conf-body h3{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:18px;
+  }
+
+  /* ---------- Ficha (speaker card) ---------- */
+  .fichas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .ficha{
+    display:flex;
+    gap:16px;
+    background:var(--bg2);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px;
+    flex:1 1 380px;
+    max-width:460px;
+    transition:border-color .2s;
+  }
+  .ficha:hover{ border-color:var(--lime); }
+  .ficha .foto-wrap{
+    position:relative;
+    flex:0 0 auto;
+    width:240px;
+    height:240px;
+    border-radius:10px;
+    overflow:hidden;
+    background:var(--bg3);
+  }
+  .ficha .foto-wrap img.foto{
+    width:100%; height:240px; object-fit:cover; display:block;
+  }
+  .ficha .foto-wrap .no-photo{
+    width:100%; height:240px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:52px; font-weight:700;
+    color:var(--muted);
+  }
+  .ficha .foto-wrap .logo-badge{
+    position:absolute;
+    bottom:8px; right:8px;
+    background:rgba(12,12,14,.85);
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:5px 7px;
+    max-height:30px;
+    display:flex; align-items:center;
+  }
+  .ficha .foto-wrap .logo-badge img{
+    max-height:18px; max-width:80px; object-fit:contain;
+  }
+  .ficha .info{
+    display:flex; flex-direction:column; gap:6px; min-width:0;
+  }
+  .ficha .info .name{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:21px; font-weight:700; line-height:1.1;
+  }
+  .ficha .info .role{ color:var(--lime); font-size:13px; font-weight:600; }
+  .ficha .info .company{ color:var(--muted); font-size:13px; margin-bottom:6px; }
+  .ficha .info .bio{
+    font-size:12.5px;
+    color:#c9c9d0;
+    line-height:1.5;
+  }
+  .ficha .info details summary{
+    cursor:pointer;
+    color:var(--purple);
+    font-size:11.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    margin-top:4px;
+    list-style:none;
+  }
+  .ficha .info details summary::-webkit-details-marker{ display:none; }
+  .ficha .info details summary:hover{ color:var(--lime); }
+  .ficha .info details[open] summary{ margin-bottom:4px; }
+  .ficha .info .bio-full{
+    font-size:12.5px;
+    color:#c9c9d0;
+    line-height:1.55;
+  }
+
+  /* Panel: several mini fichas in one row */
+  .panel-note{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:14px;
+  }
+  .panel-note b{ color:var(--purple); }
+
+  @media (max-width:720px){
+    .conf{ grid-template-columns:1fr; gap:10px; }
+    .ficha{ flex-direction:column; max-width:100%; }
+    .ficha .foto-wrap{ width:100%; height:240px; }
+  }
+
+  /* ---------- Itinerario ---------- */
+  section.itin{ padding:60px 24px; max-width:900px; margin:0 auto; }
+  section.itin .eyebrow{
+    font-family:'Barlow Condensed', sans-serif;
+    text-transform:uppercase;
+    color:var(--lime);
+    letter-spacing:.14em;
+    font-size:13px;
+    margin-bottom:10px;
+  }
+  section.itin h2{ font-size:32px; font-weight:700; margin-bottom:10px; }
+  section.itin > p{ color:var(--muted); margin-bottom:30px; }
+
+  .schedule{ border-top:1px solid var(--border); }
+  .schedule .row{
+    display:grid;
+    grid-template-columns:90px 1fr auto;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--border);
+    align-items:center;
+  }
+  .schedule .row .time{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    color:var(--lime);
+    font-size:16px;
+  }
+  .schedule .row .title{ font-size:14.5px; }
+  .schedule .row .who{
+    font-size:12.5px;
+    color:var(--muted);
+    text-align:right;
+    white-space:nowrap;
+  }
+  @media (max-width:600px){
+    .schedule .row{ grid-template-columns:70px 1fr; }
+    .schedule .row .who{ grid-column:2; text-align:left; }
+  }
+
+  /* ---------- CTA ---------- */
+  section.cta{
+    max-width:900px; margin:0 auto;
+    padding:20px 24px 70px;
+    text-align:center;
+  }
+  section.cta p.small{ color:var(--muted); font-size:13.5px; margin-bottom:20px; }
+  section.cta .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--lime); color:var(--bg);
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700; text-decoration:none;
+    padding:14px 26px; border-radius:10px;
+    text-transform:uppercase; letter-spacing:.04em; font-size:15px;
+  }
+
+  /* ---------- Footer info ---------- */
+  footer.site-footer{
+    border-top:1px solid var(--border);
+    background:var(--bg2);
+    padding:36px 24px;
+  }
+  footer.site-footer .grid{
+    max-width:1100px; margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:20px;
+    margin-bottom:24px;
+  }
+  footer.site-footer .grid .label{
+    font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin-bottom:4px;
+  }
+  footer.site-footer .grid .value{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:17px; font-weight:700;
+  }
+  footer.site-footer p.fine{
+    max-width:1100px; margin:0 auto;
+    color:var(--muted); font-size:12.5px;
+    border-top:1px solid var(--border);
+    padding-top:20px;
   }
 </style>
 </head>
 <body>
-<div class="sheet">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="blueprint-grid"></div>
-    <div class="corner tl"></div>
-    <div class="corner tr"></div>
-    <div class="hero-tag">
-      <span class="dot"></span>
-      <span class="eyebrow">BUAP · Facultad de Ciencias de la Comunicación</span>
+<header class="top">
+  <img class="logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="MKT Dojo Logo">
+  <span class="eyebrow">BUAP <span class="dot">·</span> Facultad de Ciencias de la Comunicación</span>
+</header>
+
+<div class="hero">
+  <div class="hero-top">
+    <img class="hero-logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logow.png" alt="Marketing Dojo Puebla — Logo">
+    <div class="hero-text">
+      <div class="eyebrow">Puebla · 2026</div>
+      <h1>Marketing Dojo<br><em>Puebla</em></h1>
     </div>
-      <img src="mk-dojo-logobb.png" 
-             alt="MKT Dojo Logo" 
-             style="height: 180px; width: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
-        
-      <h1 class="title" style="margin: 0;">
-            Marketing Dojo<br><em>Puebla</em>
-      </h1>
-    <p class="hero-sub">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising. Un plano completo para que los equipos de Puebla compitan — y ganen.</p>
-    <div class="info-row">
-      <div class="info-pill"><span class="k">Fecha</span><span class="v">25 de agosto, 2026</span></div>
-      <div class="info-pill"><span class="k">Sede</span><span class="v">Teatro CCU, BUAP</span></div>
-      <div class="info-pill"><span class="k">Horario</span><span class="v">9:30 – 18:00 h</span></div>
-      <div class="info-pill"><span class="k">Formato</span><span class="v">7 charlas · estilo TED</span></div>
-    </div>
-  </section>
-
-  <!-- EL PLANO -->
-  <section class="plano">
-    <div class="blueprint-grid" style="opacity:0.18;"></div>
-    <div class="section-head">
-      <span class="eyebrow">El plano</span>
-      <h2 class="section-title">Los 7 criterios, en orden de construcción</h2>
-      <p class="section-desc">Así se arma un caso ganador, de la idea a la dirección del proyecto — el mismo orden en el que un jurado lo evalúa.</p>
-    </div>
-    <div class="spine">
-
-      <div class="part">
-        <span class="part-num">00 / QUIENES LO HAN VIVIDO</span>
-        <p class="part-title">Qué cambia al ganar una competencia - Panel</p>
-        <div class="part-meta">
-          <span class="part-name">Karina Barrera (Effie College 2023), Ángel Valderrábano (Hackadton 2025), Eugenia Gómez (HackAdton 2026). Modera Vanessa Valadez (Effie College 2021)</span>
-          <span class="part-org">Strategy Manager, Birth Group</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">01 / IDEA</span>
-        <p class="part-title">Desarrollo de idea y concepto creativo</p>
-        <div class="part-meta">
-          <span class="part-name">Jorge León</span>
-          <span class="part-org">CEO, Volátil</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">02 / ESTRATEGIA</span>
-        <p class="part-title">Desarrollo de estrategia de comunicación</p>
-        <div class="part-meta">
-          <span class="part-name">Angélica Morales</span>
-          <span class="part-org">Consultora Independiente</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">03 / MEDIOS</span>
-        <p class="part-title">Planeación de medios</p>
-        <div class="part-meta">
-          <span class="part-name">Toño Orozco</span>
-          <span class="part-org">CEO, Árbol de Medios</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">04 / CRAFT</span>
-        <p class="part-title">Art &amp; craft</p>
-        <div class="part-meta">
-          <span class="part-name">Chucho Fernández</span>
-          <span class="part-org">CCO, Birth Group</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">05 / TECNOLOGÍA</span>
-        <p class="part-title">Diseño de plataforma tecnológica</p>
-        <div class="part-meta">
-          <span class="part-name">Marco Alonso</span>
-          <span class="part-org">CEO, WPBR</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">06 / PITCH</span>
-        <p class="part-title">Presentación de pitch</p>
-        <div class="part-meta">
-          <span class="part-name">Daniel Torres</span>
-          <span class="part-org">CEO, QRTL</span>
-        </div>
-      </div>
-
-      <div class="part">
-        <span class="part-num">07 / DIRECCIÓN</span>
-        <p class="part-title">Dirección global del proyecto</p>
-        <div class="part-meta">
-          <span class="part-name">Arturo Ortiz</span>
-          <span class="part-org">CEO, Birth Group</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="timeline-wrap">
-    <span class="eyebrow">Itinerario del día</span>
-    <h2 class="section-title">25 de agosto — Teatro CCU</h2>
-    <p class="section-desc">Siete conferencias de 30 minutos, un panel de cierre y espacio para comer y hacer networking.</p>
-    <div class="tline">
-      <div class="trow"><span class="t">9:30</span><span class="a">Registro y bienvenida</span><span class="b">Café de cortesía</span></div>
-      <div class="trow dim"><span class="t">10:00</span><span class="a">Inauguración oficial</span><span class="b"></span></div>
-      <div class="trow"><span class="t">10:15</span><span class="a">00 · Qué cambia al ganar una competencia - Panel</span><span class="b">Vanessa Valadez - Moderadora</span></div>
-      <div class="trow"><span class="t">10:50</span><span class="a">01 · Idea y concepto creativo</span><span class="b">Jorge León</span></div>
-      <div class="trow"><span class="t">11:25</span><span class="a">02 · Estrategia de comunicación</span><span class="b">Angélica Morales</span></div>
-      <div class="trow"><span class="t">12:00</span><span class="a">03 · Planeación de medios</span><span class="b">Toño Orozco</span></div>
-      <div class="trow"><span class="t">12:35</span><span class="a">04 · Art &amp; craft</span><span class="b">Chucho Fernández</span></div>
-      <div class="trow"><span class="t">13:10</span><span class="a">05 · Plataforma tecnológica</span><span class="b">Marco Alonso</span></div>
-      <div class="trow break"><span class="t">13:45</span><span class="a">Comida</span><span class="b">Receso de 2 h</span></div>
-      <div class="trow"><span class="t">15:45</span><span class="a">06 · Presentación de pitch</span><span class="b">Daniel Torres</span></div>
-      <div class="trow"><span class="t">16:20</span><span class="a">07 · Dirección global del proyecto</span><span class="b">Arturo Ortiz</span></div>
-      <div class="trow dim"><span class="t">16:55</span><span class="a">Panel de cierre con los 7 ponentes</span><span class="b"></span></div>
-      <div class="trow dim"><span class="t">17:20</span><span class="a">Networking y cierre</span><span class="b"></span></div>
-    </div>
-  </section>
-
-  
-
-  <!-- TITLE BLOCK / CTA -->
-  <section class="titleblock-outer">
-    <div class="blueprint-grid" style="opacity:0.18;"></div>
-    <div class="tb-lead">
-      <h2>Evento sin costo abierto a estudiantes y docentes.<br>Cupo límitado - Se requiere registro previo</h2>
-      <a class="cta" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=x8fjOlHq3kaVQBL0EQ6smw3MbHCl63tFmig2Zx7aECVUQjA4RUc4R0JWWUZGQU9FUEFIN0NESENZRi4u" target="_blank" >Reservar tu lugar →</a>
-    </div>
-    <div class="titleblock">
-      <div class="tb-row">
-        <div class="tb-cell"><div class="k">Ubicación</div><div class="v">Teatro CCU, BUAP</div></div>
-        <div class="tb-cell"><div class="k">Horario</div><div class="v">9:30 – 18:00 h</div></div>
-        <div class="tb-cell"><div class="k">Organiza</div><div class="v">Fac. Ciencias de la Comunicación</div></div>
-              </div>
-    </div>
-    <p class="footnote">Benemérita Universidad Autónoma de Puebla. Consulta el programa completo del evento con la organización de la Facultad de Ciencias de la Comunicación.</p>
-  </section>
-
+  </div>
+  <p class="desc">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising. Un plano completo para que los equipos de Puebla compitan — y ganen.</p>
+  <div class="meta-grid">
+    <div class="meta"><div class="label">Fecha</div><div class="value">25 de agosto, 2026</div></div>
+    <div class="meta"><div class="label">Sede</div><div class="value">Teatro CCU, BUAP</div></div>
+    <div class="meta"><div class="label">Horario</div><div class="value">9:30 – 18:00 h</div></div>
+    <div class="meta"><div class="label">Formato</div><div class="value">7 charlas · estilo TED</div></div>
+  </div>
 </div>
+
+<section class="plano">
+  <div class="eyebrow">El plano</div>
+  <h2>Los 7 criterios, en orden de construcción</h2>
+  <p>Así se arma un caso ganador, de la idea a la dirección del proyecto — el mismo orden en el que un jurado lo evalúa. Cada bloque incluye la ficha de quien lo presenta.</p>
+
+  <!-- 00 · PANEL -->
+  <div class="conf">
+    <div><div class="conf-tag">00 / Quienes lo han vivido</div><div class="conf-num">00</div></div>
+    <div class="conf-body">
+      <h3>Qué cambia al ganar una competencia — Panel</h3>
+      <p class="panel-note">Modera <b>Vanessa Valadez</b> (Effie College 2021), Strategy Manager en Birth Group.</p>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1jw0PF7A4U7OQ-tm36r9OiEFJjZTD5VrQ&sz=w500" alt="Vanessa Rodríguez Valadez" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;VV&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1cjb3okzytaTjsNo8rs1Av4EGW0VgByE9&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Vanessa Rodríguez Valadez</div>
+            <div class="role">Moderadora · Líder en planeación estratégica</div>
+            <div class="company">Birth Group</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Líder en Planeación Estratégica en Birth Group, con más de cuatro años desarrollando estrategias creativas y plataformas de comunicación para marcas como Bridgestone, Estafeta, Softys, Wella, Cinemex y Starbucks. Ha sido parte de campañas reconocidas en festivales como IAB Mixx, WINA Festival, Caracol de Plata, FEPI y AMCO.</div></details>
+          </div>
+        </div>
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1pI6ip0LAVc_Ho5H1VFHtQj6hanfbpk8l&sz=w500" alt="Karina Barrera Huitzil" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;KB&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1DJ7VEJJix8hseF-Rr4r3YbjoJouwkgtE&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Karina Barrera Huitzil</div>
+            <div class="role">Panelista · Planner · Effie College 2023</div>
+            <div class="company">Birth Group</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Planner en Birth Group, enfocada en traducir las necesidades de negocio en soluciones de comunicación creativas y efectivas. Impulsa la comunidad Cascarón, conectando talento emergente con la industria. Ganadora de Oro en Effie College México 2023 y metales en FEPI y WINA 2025. Formada en Mercadotecnia por la BUAP y en Planning por Miami Ad School.</div></details>
+          </div>
+        </div>
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1fAC5WODby0e-2rnpBmplLigp7OghiO5g&sz=w500" alt="José Ángel Valderrábano Reyes" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;AV&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1L1M8czHgqMJI1gz_BxhU8FHn5ydGPM-h&sz=w300" alt="Logo Archer Troy" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Ángel Valderrábano</div>
+            <div class="role">Panelista · Copywriter Trainee · Hackadton 2025</div>
+            <div class="company">Archer Troy</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Egresado de Mercadotecnia y Medios Digitales de la BUAP. Copywriter en Archer Troy, trabajando para marcas en México y Latinoamérica como Google en español, Hisense, PETA, Mapfre y Grupo Henkel. Reconocido junto a su equipo Thinkbusters en el primer Next Hackathon en Puebla, con premios a mejor Art & Craft y mejor estrategia de comunicación.</div></details>
+          </div>
+        </div>
+        <div class="ficha">
+          <div class="foto-wrap"><div class="no-photo">EG</div></div>
+          <div class="info">
+            <div class="name">Eugenia Gómez</div>
+            <div class="role">Panelista · HackAdton 2026</div>
+            <div class="company">—</div>
+            <div class="bio">Ficha completa pendiente de registro.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 · IDEA -->
+  <div class="conf">
+    <div><div class="conf-tag">01 / Idea</div><div class="conf-num">01</div></div>
+    <div class="conf-body">
+      <h3>Desarrollo de idea y concepto creativo</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap"><div class="no-photo">JL</div></div>
+          <div class="info">
+            <div class="name">Jorge León</div>
+            <div class="role">CEO</div>
+            <div class="company">Volátil</div>
+            <div class="bio">Ficha completa pendiente de registro.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 · ESTRATEGIA -->
+  <div class="conf">
+    <div><div class="conf-tag">02 / Estrategia</div><div class="conf-num">02</div></div>
+    <div class="conf-body">
+      <h3>Desarrollo de estrategia de comunicación</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1MVwE7tDFgMbfbg8NlyFrPGVMUxae4buo&sz=w500" alt="Angélica Morales" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;TO&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1TcFj1A3aKAgAntyj91YbZy6BZcMC2oTi&sz=w300" alt="" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Angélica Morales</div>
+            <div class="role">Consultora</div>
+            <div class="company">Independiente</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Estratega de Marketing Innovador | Transformadora de Negocios | Especialista en Campañas de Lanzamiento y Distribución Multicanal | Líder de Equipos Multifuncionales para el Crecimiento Empresarial</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 · MEDIOS -->
+  <div class="conf">
+    <div><div class="conf-tag">03 / Medios</div><div class="conf-num">03</div></div>
+    <div class="conf-body">
+      <h3>Planeación de medios</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1q1Rm55yIAuCcCfzccdPyU7wNbtVWDFMu&sz=w500" alt="Antonio Orozco" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;TO&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=14rx0kazIJ7n0BmRQU1siIJG4PMewWWft&sz=w300" alt="Logo Árbol de Medios" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Toño Orozco</div>
+            <div class="role">Director de Estrategia</div>
+            <div class="company">Árbol de Medios</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Publicista con 15 años de experiencia trabajando para marcas nacionales e internacionales. Empezó como creativo publicitario y hoy se dedica a la planeación de medios. Cree firmemente que una buena campaña depende tanto de la creatividad como de dónde aparece.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 · CRAFT -->
+  <div class="conf">
+    <div><div class="conf-tag">04 / Craft</div><div class="conf-num">04</div></div>
+    <div class="conf-body">
+      <h3>Art &amp; craft</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1kFBfsqDNr46mNe_e7ipQExIFmaVRC6Ki&sz=w500" alt="Jesús Fernández" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;CF&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1m0PYJMgDF0K774n4fYRaiQnRkIeXS2dN&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Chucho Fernández</div>
+            <div class="role">VP Operaciones</div>
+            <div class="company">Birth Group</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Cofundador y Vicepresidente de Operaciones de Birth México. Más de quince años liderando equipos multidisciplinarios y estrategias de comunicación para marcas como Starbucks, Bridgestone y Walmart México. Diseñador gráfico con maestrías en Comunicación Estratégica y Administración de Negocios; sus proyectos han sido reconocidos con más de 30 premios internacionales.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 · TECNOLOGÍA -->
+  <div class="conf">
+    <div><div class="conf-tag">05 / Tecnología</div><div class="conf-num">05</div></div>
+    <div class="conf-body">
+      <h3>Diseño de plataforma tecnológica</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1qW3dBaYOuAOQk436lQ525mkrI4u1hOqK&sz=w500" alt="Marco Alonso" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;MA&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=13fQTTV_JjAHHi9cnyxyh0pQzh9hY7IVC&sz=w300" alt="Logo WPBR" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Marco Alonso</div>
+            <div class="role">Director General</div>
+            <div class="company">WPBR / VRlify</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Especialista en Marketing Digital y Tecnologías Inmersivas con 15 años de experiencia desarrollando y ejecutando estrategias en medios digitales, con amplia experiencia directiva. Maestro en Administración, Director General de WPBR Marketing Digital, la primera agencia Google Partner y Meta Business Partner en Puebla. Ha impartido cursos en Ibero Puebla, ITESM CDMX, Anáhuac, UPAEP, INQBA y La Salle Oaxaca, además de empresas como Volkswagen y Fox International.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 · PITCH -->
+  <div class="conf">
+    <div><div class="conf-tag">06 / Pitch</div><div class="conf-num">06</div></div>
+    <div class="conf-body">
+      <h3>Presentación de pitch</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=14SxKS0-OyMnXLmh_wCbIBG9UiKRQzzma&sz=w500" alt="Daniel Torres" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;DT&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1YzPqrldTjXj5paymd0dthZGjAU-DZdfW&sz=w300" alt="Logo QRTL" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Daniel "Comandante" Torres</div>
+            <div class="role">Chief Creative Officer</div>
+            <div class="company">QRTL</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Chief Creative Officer y cofundador de QRTL, agencia creativa independiente. Más de 13 años de experiencia en publicidad, marketing, estrategia y construcción de marcas, con foco en conceptualización creativa. Juez en Effie Awards México y Effie College; también speaker TEDx, consultor, locutor comercial y actor de doblaje.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 · DIRECCIÓN -->
+  <div class="conf">
+    <div><div class="conf-tag">07 / Dirección</div><div class="conf-num">07</div></div>
+    <div class="conf-body">
+      <h3>Dirección global del proyecto</h3>
+      <div class="fichas">
+        <div class="ficha">
+          <div class="foto-wrap">
+            <img class="foto" src="https://drive.google.com/thumbnail?id=1cPcFgqNaytbJwyhLhkW4rFJrXHftNUzi&sz=w500" alt="Arturo Ortiz" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;AO&lt;/div&gt;')">
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1wY2Xe34yyt_LDgZXAbFP9-vjag9KahUW&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
+          </div>
+          <div class="info">
+            <div class="name">Arturo Ortiz</div>
+            <div class="role">Director General</div>
+            <div class="company">Birth Group</div>
+            <details><summary>Leer bio</summary><div class="bio-full">Director general de Birth Group, especializado en branding, comunicación estratégica e InsideOut Branding. Más de 15 años trabajando con más de 200 marcas nacionales e internacionales. Copresidente de AMCO, mentor de Endeavor México, fundador de ADD Suma de Agencias Creativas y columnista en Merca 2.0.</div></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itin">
+  <div class="eyebrow">Itinerario del día</div>
+  <h2>25 de agosto — Teatro CCU</h2>
+  <p>Siete conferencias de 30 minutos, un panel de cierre y espacio para comer y hacer networking.</p>
+
+  <div class="schedule">
+    <div class="row"><div class="time">9:30</div><div class="title">Registro y bienvenida</div><div class="who">Café de cortesía</div></div>
+    <div class="row"><div class="time">10:00</div><div class="title">Inauguración oficial</div><div class="who"></div></div>
+    <div class="row"><div class="time">10:15</div><div class="title">00 · Qué cambia al ganar una competencia — Panel</div><div class="who">Vanessa Valadez · Moderadora</div></div>
+    <div class="row"><div class="time">10:50</div><div class="title">01 · Idea y concepto creativo</div><div class="who">Jorge León</div></div>
+    <div class="row"><div class="time">11:25</div><div class="title">02 · Estrategia de comunicación</div><div class="who">Angélica Morales</div></div>
+    <div class="row"><div class="time">12:00</div><div class="title">03 · Planeación de medios</div><div class="who">Toño Orozco</div></div>
+    <div class="row"><div class="time">12:35</div><div class="title">04 · Art &amp; craft</div><div class="who">Chucho Fernández</div></div>
+    <div class="row"><div class="time">13:10</div><div class="title">05 · Plataforma tecnológica</div><div class="who">Marco Alonso</div></div>
+    <div class="row"><div class="time">13:45</div><div class="title">Comida</div><div class="who">Receso de 2 h</div></div>
+    <div class="row"><div class="time">15:45</div><div class="title">06 · Presentación de pitch</div><div class="who">Daniel Torres</div></div>
+    <div class="row"><div class="time">16:20</div><div class="title">07 · Dirección global del proyecto</div><div class="who">Arturo Ortiz</div></div>
+    <div class="row"><div class="time">16:55</div><div class="title">Panel de cierre con los 7 ponentes</div><div class="who"></div></div>
+    <div class="row"><div class="time">17:20</div><div class="title">Networking y cierre</div><div class="who"></div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <p class="small">Evento sin costo abierto a estudiantes y docentes. Cupo límitado — se requiere registro previo.</p>
+  <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=x8fjOlHq3kaVQBL0EQ6smw3MbHCl63tFmig2Zx7aECVUQjA4RUc4R0JWWUZGQU9FUEFIN0NESENZRi4u">
+    <span class="ti ti-calendar-check"></span> Reservar tu lugar
+  </a>
+</section>
+
+<footer class="site-footer">
+  <div class="grid">
+    <div><div class="label">Ubicación</div><div class="value">Teatro CCU, BUAP</div></div>
+    <div><div class="label">Horario</div><div class="value">9:30 – 18:00 h</div></div>
+    <div><div class="label">Organiza</div><div class="value">Fac. Ciencias de la Comunicación</div></div>
+  </div>
+  <p class="fine">Benemérita Universidad Autónoma de Puebla. Consulta el programa completo del evento con la organización de la Facultad de Ciencias de la Comunicación.</p>
+</footer>
+
 </body>
 </html>
