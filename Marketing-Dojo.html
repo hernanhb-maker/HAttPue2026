@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MKT Dojo — Puebla</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <style>
   :root{
@@ -14,6 +14,7 @@
     --bg3:#1c1c22;
     --lime:#b8ff4e;
     --purple:#a78bfa;
+    --red:#ff3b3b;
     --text:#f2f2f0;
     --muted:#9a9aa2;
     --border:#26262e;
@@ -24,113 +25,198 @@
     color:var(--text);
     font-family:'Barlow', sans-serif;
     line-height:1.5;
+    overflow-x:hidden;
   }
-  h1,h2,h3,.condensed{ font-family:'Barlow Condensed', sans-serif; letter-spacing:.02em; }
+  h1,h2,h3,.condensed{ font-family:'Barlow Condensed', sans-serif; letter-spacing:.01em; }
   a{ color:inherit; }
   img{ max-width:100%; display:block; }
 
   /* ---------- Header ---------- */
   header.top{
-    padding:18px 24px;
-    display:flex; align-items:center; gap:12px;
+    padding:16px 24px;
+    display:flex; align-items:center; gap:10px;
     border-bottom:1px solid var(--border);
     background:var(--bg2);
-    position:sticky; top:0; z-index:20;
+    position:sticky; top:0; z-index:30;
   }
-  header.top img.logo{ height:32px; }
+  header.top img.logo{ height:30px; filter:brightness(0) invert(1); }
   header.top .eyebrow{
     font-family:'Barlow Condensed', sans-serif;
     text-transform:uppercase;
-    font-size:13px;
-    letter-spacing:.12em;
+    font-size:12.5px;
+    letter-spacing:.14em;
     color:var(--muted);
   }
   header.top .dot{ color:var(--lime); }
 
   /* ---------- Hero ---------- */
   .hero{
-    padding:64px 24px 40px;
-    max-width:1100px;
+    position:relative;
+    padding:80px 24px 60px;
+    max-width:1200px;
+    margin:0 auto;
+    overflow:hidden;
   }
+  .hero .accent-shape{
+    position:absolute;
+    top:-140px; right:-140px;
+    width:480px; height:480px;
+    border-radius:50%;
+    background:var(--red);
+    opacity:.16;
+    filter:blur(2px);
+    z-index:0;
+  }
+  .hero .accent-stripe{
+    position:absolute;
+    top:0; right:8%;
+    width:2px; height:100%;
+    background:linear-gradient(180deg, transparent, var(--purple), transparent);
+    opacity:.5;
+    z-index:0;
+  }
+  .hero-inner{ position:relative; z-index:1; }
+
   .hero-top{
     display:flex;
-    align-items:flex-end;
-    gap:32px;
+    align-items:center;
+    gap:36px;
     flex-wrap:wrap;
-    margin-bottom:18px;
+    margin-bottom:28px;
   }
-  .hero-top img.hero-logo{
-    height:240px;
-    width:auto;
+  .hero-top .logo-frame{
     flex:0 0 auto;
+    width:240px; height:240px;
+    border-radius:24px;
+    background:var(--bg2);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    padding:28px;
+    position:relative;
+  }
+  .hero-top .logo-frame::before{
+    content:"";
+    position:absolute;
+    inset:-1px;
+    border-radius:24px;
+    padding:1px;
+    background:linear-gradient(135deg, var(--lime), transparent 60%);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+  }
+  .hero-top .logo-frame img{
+    width:100%; height:100%; object-fit:contain;
+    filter:brightness(0) invert(1);
   }
   .hero-top .hero-text{ flex:1 1 320px; min-width:280px; }
   .hero .eyebrow{
     font-family:'Barlow Condensed', sans-serif;
     text-transform:uppercase;
     color:var(--lime);
-    letter-spacing:.14em;
+    letter-spacing:.16em;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .hero .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background:var(--lime);
+    display:inline-block;
   }
   .hero h1{
-    font-weight:800;
-    font-size:clamp(38px, 7vw, 64px);
-    line-height:1.0;
+    font-weight:900;
+    text-transform:uppercase;
+    font-size:clamp(46px, 8vw, 92px);
+    line-height:.92;
+    letter-spacing:-.01em;
   }
-  .hero h1 em{ color:var(--purple); font-style:normal; }
+  .hero h1 .line2{ color:var(--purple); display:block; }
   .hero p.desc{
     color:var(--muted);
     font-size:17px;
-    max-width:680px;
-    margin:20px 0 32px;
+    max-width:640px;
+    margin:24px 0 36px;
   }
   .meta-grid{
+    position:relative; z-index:1;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
-    gap:16px;
-    max-width:800px;
+    gap:2px;
+    max-width:900px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
   }
   .meta-grid .meta{
     background:var(--bg2);
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:14px 16px;
+    padding:16px 18px;
   }
   .meta-grid .meta .label{
     font-size:11px;
     text-transform:uppercase;
-    letter-spacing:.08em;
+    letter-spacing:.1em;
     color:var(--muted);
-    margin-bottom:4px;
+    margin-bottom:5px;
   }
   .meta-grid .meta .value{
     font-family:'Barlow Condensed', sans-serif;
-    font-size:18px;
+    font-size:19px;
     font-weight:700;
   }
 
   @media (max-width:640px){
     .hero-top{ flex-direction:column; align-items:flex-start; gap:20px; }
-    .hero-top img.hero-logo{ height:160px; }
+    .hero-top .logo-frame{ width:180px; height:180px; }
+    .hero .accent-shape{ width:320px; height:320px; top:-100px; right:-160px; }
   }
 
   /* ---------- Plano section ---------- */
-  section.plano{ padding:60px 24px 20px; max-width:1100px; margin:0 auto; }
+  section.plano{
+    position:relative;
+    padding:80px 24px 20px;
+    max-width:1150px;
+    margin:0 auto;
+    overflow:hidden;
+  }
+  section.plano .watermark{
+    position:absolute;
+    top:20px; right:-40px;
+    width:340px; height:340px;
+    opacity:.035;
+    filter:brightness(0) invert(1);
+    pointer-events:none;
+    z-index:0;
+  }
   .plano .eyebrow{
+    position:relative; z-index:1;
     font-family:'Barlow Condensed', sans-serif;
     text-transform:uppercase;
     color:var(--lime);
-    letter-spacing:.14em;
+    letter-spacing:.16em;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:12px;
+    display:flex; align-items:center; gap:8px;
   }
-  .plano h2{ font-size:32px; font-weight:700; margin-bottom:14px; }
-  .plano > p{ color:var(--muted); max-width:640px; margin-bottom:44px; }
+  .plano .eyebrow::before{ content:""; width:22px; height:2px; background:var(--lime); display:inline-block; }
+  .plano h2{
+    position:relative; z-index:1;
+    font-size:clamp(30px,4.5vw,44px);
+    font-weight:800;
+    text-transform:uppercase;
+    line-height:1.02;
+    margin-bottom:16px;
+    max-width:760px;
+  }
+  .plano > p{ position:relative; z-index:1; color:var(--muted); max-width:640px; margin-bottom:50px; font-size:15.5px; }
 
   .conf{
+    position:relative; z-index:1;
     border-top:1px solid var(--border);
-    padding:36px 0;
+    padding:40px 0;
     display:grid;
     grid-template-columns:180px 1fr;
     gap:28px;
@@ -145,71 +231,79 @@
   }
   .conf .conf-num{
     font-family:'Barlow Condensed', sans-serif;
-    font-size:44px;
-    font-weight:800;
-    color:var(--bg3);
-    -webkit-text-stroke:1px var(--border);
+    font-size:64px;
+    font-weight:900;
+    color:transparent;
+    -webkit-text-stroke:1.5px var(--border);
     line-height:1;
-    margin-top:4px;
+    margin-top:6px;
+    transition:color .2s, -webkit-text-stroke-color .2s;
   }
+  .conf:hover .conf-num{ -webkit-text-stroke-color:var(--lime); }
   .conf .conf-body h3{
-    font-size:24px;
+    font-size:25px;
     font-weight:700;
-    margin-bottom:18px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:.01em;
   }
 
   /* ---------- Ficha (speaker card) ---------- */
-  .fichas{
-    display:flex;
-    flex-wrap:wrap;
-    gap:16px;
-  }
+  .fichas{ display:flex; flex-wrap:wrap; gap:16px; }
   .ficha{
     display:flex;
     gap:16px;
     background:var(--bg2);
     border:1px solid var(--border);
-    border-radius:14px;
+    border-radius:16px;
     padding:14px;
     flex:1 1 380px;
     max-width:460px;
-    transition:border-color .2s;
+    transition:border-color .2s, transform .2s;
   }
-  .ficha:hover{ border-color:var(--lime); }
+  .ficha:hover{ border-color:var(--lime); transform:translateY(-2px); }
   .ficha .foto-wrap{
     position:relative;
     flex:0 0 auto;
     width:240px;
     height:240px;
-    border-radius:10px;
+    border-radius:12px;
     overflow:hidden;
     background:var(--bg3);
   }
-  .ficha .foto-wrap img.foto{
-    width:100%; height:240px; object-fit:cover; display:block;
-  }
+  .ficha .foto-wrap img.foto{ width:100%; height:240px; object-fit:cover; display:block; }
   .ficha .foto-wrap .no-photo{
     width:100%; height:240px;
     display:flex; align-items:center; justify-content:center;
     font-family:'Barlow Condensed', sans-serif;
-    font-size:52px; font-weight:700;
+    font-size:52px; font-weight:800;
     color:var(--muted);
   }
   .ficha .foto-wrap .logo-badge{
-    position:absolute;
-    bottom:8px; right:8px;
+    position:absolute; bottom:8px; right:8px;
     background:rgba(12,12,14,.85);
     border:1px solid var(--border);
-    border-radius:7px;
+    border-radius:8px;
     padding:5px 7px;
     max-height:30px;
     display:flex; align-items:center;
   }
-  .ficha .foto-wrap .logo-badge img{
-    max-height:18px; max-width:80px; object-fit:contain;
+  .ficha .foto-wrap .logo-badge img{ max-height:18px; max-width:80px; object-fit:contain; }
+  .ficha .info{ display:flex; flex-direction:column; gap:4px; min-width:0; }
+  .ficha .info .sensei-tag{
+    display:inline-flex; align-items:center; gap:5px;
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:11px; font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:var(--red);
+    margin-bottom:2px;
   }
-  .ficha .info{
-    display:flex; flex-direction:column; gap:6px; min-width:0;
+  .ficha .info .sensei-tag::before{
+    content:"";
+    width:14px; height:1px;
+    background:var(--red);
+    display:inline-block;
   }
   .ficha .info .name{
     font-family:'Barlow Condensed', sans-serif;
@@ -217,37 +311,18 @@
   }
   .ficha .info .role{ color:var(--lime); font-size:13px; font-weight:600; }
   .ficha .info .company{ color:var(--muted); font-size:13px; margin-bottom:6px; }
-  .ficha .info .bio{
-    font-size:12.5px;
-    color:#c9c9d0;
-    line-height:1.5;
-  }
+  .ficha .info .bio{ font-size:12.5px; color:#c9c9d0; line-height:1.5; }
   .ficha .info details summary{
-    cursor:pointer;
-    color:var(--purple);
-    font-size:11.5px;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:.04em;
-    margin-top:4px;
-    list-style:none;
+    cursor:pointer; color:var(--purple); font-size:11.5px; font-weight:600;
+    text-transform:uppercase; letter-spacing:.04em; margin-top:4px; list-style:none;
   }
   .ficha .info details summary::-webkit-details-marker{ display:none; }
   .ficha .info details summary:hover{ color:var(--lime); }
   .ficha .info details[open] summary{ margin-bottom:4px; }
-  .ficha .info .bio-full{
-    font-size:12.5px;
-    color:#c9c9d0;
-    line-height:1.55;
-  }
+  .ficha .info .bio-full{ font-size:12.5px; color:#c9c9d0; line-height:1.55; }
 
-  /* Panel: several mini fichas in one row */
-  .panel-note{
-    font-size:13px;
-    color:var(--muted);
-    margin-bottom:14px;
-  }
-  .panel-note b{ color:var(--purple); }
+  .panel-note{ font-size:13px; color:var(--muted); margin-bottom:14px; }
+  .panel-note b{ color:var(--red); }
 
   @media (max-width:720px){
     .conf{ grid-template-columns:1fr; gap:10px; }
@@ -256,24 +331,29 @@
   }
 
   /* ---------- Itinerario ---------- */
-  section.itin{ padding:60px 24px; max-width:900px; margin:0 auto; }
+  section.itin{ padding:80px 24px; max-width:920px; margin:0 auto; position:relative; }
   section.itin .eyebrow{
     font-family:'Barlow Condensed', sans-serif;
     text-transform:uppercase;
     color:var(--lime);
-    letter-spacing:.14em;
+    letter-spacing:.16em;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:12px;
+    display:flex; align-items:center; gap:10px;
   }
-  section.itin h2{ font-size:32px; font-weight:700; margin-bottom:10px; }
-  section.itin > p{ color:var(--muted); margin-bottom:30px; }
+  section.itin .eyebrow::before{ content:""; width:22px; height:2px; background:var(--lime); display:inline-block; }
+  section.itin .eyebrow img{ height:18px; filter:brightness(0) invert(1); opacity:.7; }
+  section.itin h2{
+    font-size:clamp(28px,4vw,38px); font-weight:800; text-transform:uppercase; margin-bottom:12px;
+  }
+  section.itin > p{ color:var(--muted); margin-bottom:34px; font-size:15.5px; }
 
   .schedule{ border-top:1px solid var(--border); }
   .schedule .row{
     display:grid;
     grid-template-columns:90px 1fr auto;
     gap:16px;
-    padding:14px 0;
+    padding:15px 0;
     border-bottom:1px solid var(--border);
     align-items:center;
   }
@@ -284,12 +364,7 @@
     font-size:16px;
   }
   .schedule .row .title{ font-size:14.5px; }
-  .schedule .row .who{
-    font-size:12.5px;
-    color:var(--muted);
-    text-align:right;
-    white-space:nowrap;
-  }
+  .schedule .row .who{ font-size:12.5px; color:var(--muted); text-align:right; white-space:nowrap; }
   @media (max-width:600px){
     .schedule .row{ grid-template-columns:70px 1fr; }
     .schedule .row .who{ grid-column:2; text-align:left; }
@@ -297,43 +372,75 @@
 
   /* ---------- CTA ---------- */
   section.cta{
-    max-width:900px; margin:0 auto;
-    padding:20px 24px 70px;
+    position:relative;
+    max-width:1000px; margin:20px auto 0;
+    padding:60px 24px 90px;
     text-align:center;
+    overflow:hidden;
   }
-  section.cta p.small{ color:var(--muted); font-size:13.5px; margin-bottom:20px; }
+  section.cta .cta-shape{
+    position:absolute;
+    bottom:-120px; left:50%; transform:translateX(-50%);
+    width:520px; height:260px;
+    background:var(--red);
+    opacity:.13;
+    border-radius:50%;
+    filter:blur(4px);
+    z-index:0;
+  }
+  section.cta .inner{ position:relative; z-index:1; }
+  section.cta img.cta-logo{
+    height:64px;
+    margin:0 auto 22px;
+    filter:brightness(0) invert(1);
+    opacity:.9;
+  }
+  section.cta p.small{ color:var(--muted); font-size:13.5px; margin-bottom:22px; }
   section.cta .btn{
     display:inline-flex; align-items:center; gap:8px;
     background:var(--lime); color:var(--bg);
     font-family:'Barlow Condensed', sans-serif;
-    font-weight:700; text-decoration:none;
-    padding:14px 26px; border-radius:10px;
-    text-transform:uppercase; letter-spacing:.04em; font-size:15px;
+    font-weight:800; text-decoration:none;
+    padding:16px 30px; border-radius:12px;
+    text-transform:uppercase; letter-spacing:.05em; font-size:16px;
   }
 
   /* ---------- Footer info ---------- */
   footer.site-footer{
     border-top:1px solid var(--border);
     background:var(--bg2);
-    padding:36px 24px;
+    padding:40px 24px;
+  }
+  footer.site-footer .foot-top{
+    max-width:1150px; margin:0 auto 24px;
+    display:flex; align-items:center; gap:14px;
+  }
+  footer.site-footer .foot-top img{ height:36px; filter:brightness(0) invert(1); }
+  footer.site-footer .foot-top span{
+    font-family:'Barlow Condensed', sans-serif;
+    font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--muted);
   }
   footer.site-footer .grid{
-    max-width:1100px; margin:0 auto;
+    max-width:1150px; margin:0 auto;
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
-    gap:20px;
+    gap:2px;
     margin-bottom:24px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
   }
+  footer.site-footer .grid > div{ background:var(--bg2); padding:16px 18px; }
   footer.site-footer .grid .label{
-    font-size:11px; text-transform:uppercase; letter-spacing:.08em;
-    color:var(--muted); margin-bottom:4px;
+    font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:4px;
   }
   footer.site-footer .grid .value{
-    font-family:'Barlow Condensed', sans-serif;
-    font-size:17px; font-weight:700;
+    font-family:'Barlow Condensed', sans-serif; font-size:17px; font-weight:700;
   }
   footer.site-footer p.fine{
-    max-width:1100px; margin:0 auto;
+    max-width:1150px; margin:0 auto;
     color:var(--muted); font-size:12.5px;
     border-top:1px solid var(--border);
     padding-top:20px;
@@ -343,27 +450,34 @@
 <body>
 
 <header class="top">
-  <img class="logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logow.png" alt="MKT Dojo Logo">
+  <img class="logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="MKT Dojo Logo">
   <span class="eyebrow">BUAP <span class="dot">·</span> Facultad de Ciencias de la Comunicación</span>
 </header>
 
 <div class="hero">
-  <div class="hero-top">
-    <img class="hero-logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logow.png" alt="Marketing Dojo Puebla — Logo">
-    <div class="hero-text">
-      <div class="eyebrow">Puebla · 2026</div>
-      <h1>Marketing Dojo<br><em>Puebla</em></h1>
+  <div class="accent-shape"></div>
+  <div class="accent-stripe"></div>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="logo-frame">
+        <img src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="Marketing Dojo Puebla — Logo">
+      </div>
+      <div class="hero-text">
+        <div class="eyebrow">Puebla · 2026</div>
+        <h1>Marketing<span class="line2">Dojo Puebla</span></h1>
+      </div>
     </div>
-  </div>
-  <p class="desc">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising. Un plano completo para que los equipos de Puebla compitan — y ganen.</p>
-  <div class="meta-grid">
-    <div class="meta"><div class="label">Fecha</div><div class="value">25 de agosto, 2026</div></div>
-    <div class="meta"><div class="label">Sede</div><div class="value">Teatro CCU, BUAP</div></div>
-    <div class="meta"><div class="label">Horario</div><div class="value">9:30 – 18:00 h</div></div>
+    <p class="desc">Siete referentes de la industria publicitaria poblana desmontan, criterio por criterio, lo que un jurado busca en las principales competencias de marketing y advertising. Un plano completo para que los equipos de Puebla compitan — y ganen.</p>
+    <div class="meta-grid">
+      <div class="meta"><div class="label">Fecha</div><div class="value">25 de agosto, 2026</div></div>
+      <div class="meta"><div class="label">Sede</div><div class="value">Teatro CCU, BUAP</div></div>
+      <div class="meta"><div class="label">Horario</div><div class="value">9:30 – 18:00 h</div></div></div>
+    </div>
   </div>
 </div>
 
 <section class="plano">
+  <img class="watermark" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="">
   <div class="eyebrow">El plano</div>
   <h2>Los 7 criterios, en orden de construcción</h2>
   <p>Así se arma un caso ganador, de la idea a la dirección del proyecto.</p>
@@ -373,7 +487,7 @@
     <div><div class="conf-tag">00 / Quienes lo han vivido</div><div class="conf-num">00</div></div>
     <div class="conf-body">
       <h3>Qué cambia al ganar una competencia — Panel</h3>
-      <p class="panel-note">Modera <b>Vanessa Rodríguez Valadez</b> (Effie College 2021), Strategy Manager en Birth Group.</p>
+    
       <div class="fichas">
         <div class="ficha">
           <div class="foto-wrap">
@@ -381,8 +495,9 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1cjb3okzytaTjsNo8rs1Av4EGW0VgByE9&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
-            <div class="name">Vanessa Rodríguez Valadez</div>
-            <div class="role">Moderadora · Líder en planeación estratégica</div>
+            <div class="sensei-tag">Sensei</div>
+            <div class="name">Vanessa Rodríguez Valadez (Moderadora)</div>
+            <div class="role">Líder en planeación estratégica</div>
             <div class="company">Birth Group</div>
             <details><summary>Leer bio</summary><div class="bio-full">Líder en Planeación Estratégica en Birth Group, con más de cuatro años desarrollando estrategias creativas y plataformas de comunicación para marcas como Bridgestone, Estafeta, Softys, Wella, Cinemex y Starbucks. Ha sido parte de campañas reconocidas en festivales como IAB Mixx, WINA Festival, Caracol de Plata, FEPI y AMCO.</div></details>
           </div>
@@ -394,7 +509,7 @@
           </div>
           <div class="info">
             <div class="name">Karina Barrera Huitzil</div>
-            <div class="role">Panelista · Planner · Effie College 2023</div>
+            <div class="role">Planner · Effie College 2023</div>
             <div class="company">Birth Group</div>
             <details><summary>Leer bio</summary><div class="bio-full">Planner en Birth Group, enfocada en traducir las necesidades de negocio en soluciones de comunicación creativas y efectivas. Impulsa la comunidad Cascarón, conectando talento emergente con la industria. Ganadora de Oro en Effie College México 2023 y metales en FEPI y WINA 2025. Formada en Mercadotecnia por la BUAP y en Planning por Miami Ad School.</div></details>
           </div>
@@ -406,7 +521,7 @@
           </div>
           <div class="info">
             <div class="name">Ángel Valderrábano</div>
-            <div class="role">Panelista · Copywriter Trainee · Hackadton 2025</div>
+            <div class="role">Copywriter Trainee · Hackadton 2025</div>
             <div class="company">Archer Troy</div>
             <details><summary>Leer bio</summary><div class="bio-full">Egresado de Mercadotecnia y Medios Digitales de la BUAP. Copywriter en Archer Troy, trabajando para marcas en México y Latinoamérica como Google en español, Hisense, PETA, Mapfre y Grupo Henkel. Reconocido junto a su equipo Thinkbusters en el primer Next Hackathon en Puebla, con premios a mejor Art & Craft y mejor estrategia de comunicación.</div></details>
           </div>
@@ -415,7 +530,7 @@
           <div class="foto-wrap"><div class="no-photo">EG</div></div>
           <div class="info">
             <div class="name">Eugenia Gómez</div>
-            <div class="role">Panelista · HackAdton 2026</div>
+            <div class="role">HackAdton 2026</div>
             <div class="company">—</div>
             <div class="bio">Ficha completa pendiente de registro.</div>
           </div>
@@ -433,6 +548,7 @@
         <div class="ficha">
           <div class="foto-wrap"><div class="no-photo">JL</div></div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Jorge León</div>
             <div class="role">CEO</div>
             <div class="company">Volátil</div>
@@ -451,14 +567,17 @@
       <div class="fichas">
         <div class="ficha">
           <div class="foto-wrap">
+
             <img class="foto" src="https://drive.google.com/thumbnail?id=1MVwE7tDFgMbfbg8NlyFrPGVMUxae4buo&sz=w500" alt="Angélica Morales" loading="lazy" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend','&lt;div class=&quot;no-photo&quot;&gt;TO&lt;/div&gt;')">
-            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1TcFj1A3aKAgAntyj91YbZy6BZcMC2oTi&sz=w300" alt="" loading="lazy" onerror="this.parentElement.remove()"></div>
+            <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1TcFj1A3aKAgAntyj91YbZy6BZcMC2oTi&sz=w300" alt="Consultora Independiente" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
+</div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Angélica Morales</div>
-            <div class="role">Consultora</div>
-            <div class="company">Independiente</div>
-            <details><summary>Leer bio</summary><div class="bio-full">Estratega de Marketing Innovador | Transformadora de Negocios | Especialista en Campañas de Lanzamiento y Distribución Multicanal | Líder de Equipos Multifuncionales para el Crecimiento Empresarial</div></details>
+            <div class="role">Consultora Independiente</div>
+            <div class="company">—</div>
+            <div class="bio">Ficha completa pendiente de registro.</div>
           </div>
         </div>
       </div>
@@ -477,6 +596,7 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=14rx0kazIJ7n0BmRQU1siIJG4PMewWWft&sz=w300" alt="Logo Árbol de Medios" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Toño Orozco</div>
             <div class="role">Director de Estrategia</div>
             <div class="company">Árbol de Medios</div>
@@ -487,7 +607,7 @@
     </div>
   </div>
 
-  <!-- 04 · CRAFT -->
+  <!-- 04 · ART & CRAFT -->
   <div class="conf">
     <div><div class="conf-tag">04 / Craft</div><div class="conf-num">04</div></div>
     <div class="conf-body">
@@ -499,6 +619,7 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1m0PYJMgDF0K774n4fYRaiQnRkIeXS2dN&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Chucho Fernández</div>
             <div class="role">VP Operaciones</div>
             <div class="company">Birth Group</div>
@@ -521,6 +642,7 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=13fQTTV_JjAHHi9cnyxyh0pQzh9hY7IVC&sz=w300" alt="Logo WPBR" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Marco Alonso</div>
             <div class="role">Director General</div>
             <div class="company">WPBR / VRlify</div>
@@ -543,6 +665,7 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1YzPqrldTjXj5paymd0dthZGjAU-DZdfW&sz=w300" alt="Logo QRTL" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Daniel "Comandante" Torres</div>
             <div class="role">Chief Creative Officer</div>
             <div class="company">QRTL</div>
@@ -565,6 +688,7 @@
             <div class="logo-badge"><img src="https://drive.google.com/thumbnail?id=1wY2Xe34yyt_LDgZXAbFP9-vjag9KahUW&sz=w300" alt="Logo Birth Group" loading="lazy" onerror="this.parentElement.remove()"></div>
           </div>
           <div class="info">
+            <div class="sensei-tag">Sensei</div>
             <div class="name">Arturo Ortiz</div>
             <div class="role">Director General</div>
             <div class="company">Birth Group</div>
@@ -577,35 +701,43 @@
 </section>
 
 <section class="itin">
-  <div class="eyebrow">Itinerario del día</div>
+  <div class="eyebrow"><img src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt=""> Itinerario del día</div>
   <h2>25 de agosto — Teatro CCU</h2>
   <p>Siete conferencias de 30 minutos, un panel de cierre y espacio para comer y hacer networking.</p>
 
   <div class="schedule">
     <div class="row"><div class="time">9:30</div><div class="title">Registro y bienvenida</div><div class="who">Café de cortesía</div></div>
     <div class="row"><div class="time">10:00</div><div class="title">Inauguración oficial</div><div class="who"></div></div>
-    <div class="row"><div class="time">10:15</div><div class="title">00 · Qué cambia al ganar una competencia — Panel</div><div class="who">Vanessa Valadez · Moderadora</div></div>
-    <div class="row"><div class="time">10:50</div><div class="title">01 · Idea y concepto creativo</div><div class="who">Jorge León</div></div>
-    <div class="row"><div class="time">11:25</div><div class="title">02 · Estrategia de comunicación</div><div class="who">Angélica Morales</div></div>
-    <div class="row"><div class="time">12:00</div><div class="title">03 · Planeación de medios</div><div class="who">Toño Orozco</div></div>
-    <div class="row"><div class="time">12:35</div><div class="title">04 · Art &amp; craft</div><div class="who">Chucho Fernández</div></div>
-    <div class="row"><div class="time">13:10</div><div class="title">05 · Plataforma tecnológica</div><div class="who">Marco Alonso</div></div>
+    <div class="row"><div class="time">10:15</div><div class="title">00 · Qué cambia al ganar una competencia — Panel</div><div class="who">Sensei Vanessa Valadez · Moderadora</div></div>
+    <div class="row"><div class="time">10:50</div><div class="title">01 · Idea y concepto creativo</div><div class="who">Sensei Jorge León</div></div>
+    <div class="row"><div class="time">11:25</div><div class="title">02 · Estrategia de comunicación</div><div class="who">Sensei Angélica Morales</div></div>
+    <div class="row"><div class="time">12:00</div><div class="title">03 · Planeación de medios</div><div class="who">Sensei Toño Orozco</div></div>
+    <div class="row"><div class="time">12:35</div><div class="title">04 · Art &amp; craft</div><div class="who">Sensei Chucho Fernández</div></div>
+    <div class="row"><div class="time">13:10</div><div class="title">05 · Plataforma tecnológica</div><div class="who">Sensei Marco Alonso</div></div>
     <div class="row"><div class="time">13:45</div><div class="title">Comida</div><div class="who">Receso de 2 h</div></div>
-    <div class="row"><div class="time">15:45</div><div class="title">06 · Presentación de pitch</div><div class="who">Daniel Torres</div></div>
-    <div class="row"><div class="time">16:20</div><div class="title">07 · Dirección global del proyecto</div><div class="who">Arturo Ortiz</div></div>
+    <div class="row"><div class="time">15:45</div><div class="title">06 · Presentación de pitch</div><div class="who">Sensei Daniel Torres</div></div>
+    <div class="row"><div class="time">16:20</div><div class="title">07 · Dirección global del proyecto</div><div class="who">Sensei Arturo Ortiz</div></div>
     <div class="row"><div class="time">16:55</div><div class="title">Panel de cierre con los 7 ponentes</div><div class="who"></div></div>
     <div class="row"><div class="time">17:20</div><div class="title">Networking y cierre</div><div class="who"></div></div>
   </div>
 </section>
 
 <section class="cta">
-  <p class="small">Evento sin costo abierto a estudiantes y docentes. Cupo límitado — se requiere registro previo.</p>
-  <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=x8fjOlHq3kaVQBL0EQ6smw3MbHCl63tFmig2Zx7aECVUQjA4RUc4R0JWWUZGQU9FUEFIN0NESENZRi4u">
-    <span class="ti ti-calendar-check"></span> Reservar tu lugar
-  </a>
+  <div class="cta-shape"></div>
+  <div class="inner">
+    <img class="cta-logo" src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="Marketing Dojo Puebla">
+    <p class="small">Evento sin costo abierto a estudiantes y docentes. Cupo límitado — se requiere registro previo.</p>
+    <a class="btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=x8fjOlHq3kaVQBL0EQ6smw3MbHCl63tFmig2Zx7aECVUQjA4RUc4R0JWWUZGQU9FUEFIN0NESENZRi4u">
+      <span class="ti ti-calendar-check"></span> Reservar tu lugar
+    </a>
+  </div>
 </section>
 
 <footer class="site-footer">
+  <div class="foot-top">
+    <img src="https://hernanhb-maker.github.io/HAttPue2026/mk-dojo-logobb.png" alt="MKT Dojo Logo">
+    <span>Marketing Dojo Puebla</span>
+  </div>
   <div class="grid">
     <div><div class="label">Ubicación</div><div class="value">Teatro CCU, BUAP</div></div>
     <div><div class="label">Horario</div><div class="value">9:30 – 18:00 h</div></div>
